@@ -98,6 +98,18 @@
   }
   .btn-secondary:hover{ background: var(--on-surface); color: var(--on-primary); }
 
+  .text-link{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    border-bottom: 1px solid var(--outline-variant);
+    padding-bottom: 2px;
+    transition: color 160ms ease, border-color 160ms ease;
+  }
+  .text-link:hover{ color: var(--on-surface); border-color: var(--on-surface); }
+
   /* ---------- NAV ---------- */
   header{
     position: sticky;
@@ -113,7 +125,7 @@
     justify-content: space-between;
     height: 84px;
   }
-  .logo-mark{ width: 148px; height: auto; }
+  .logo-mark{ width: 168px; height: auto; }
   .nav-links{
     display:flex;
     align-items:center;
@@ -136,31 +148,42 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    padding: 120px 0 96px;
+    padding: 132px 0 112px;
     border-bottom: 1px solid var(--border-subtle);
   }
-  .hero .eyebrow{ margin-bottom: 28px; }
+  .hero .eyebrow{ margin-bottom: 24px; }
   .hero h1{
-    font-size: 56px;
-    line-height: 1.16;
-    max-width: 820px;
-    margin-bottom: 28px;
+    font-size: 48px;
+    line-height: 1.22;
+    max-width: 680px;
+    margin-bottom: 32px;
   }
   .hero .sub{
     font-family: 'Inter', sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 300;
+    line-height: 1.65;
     color: var(--on-surface-variant);
-    max-width: 520px;
-    margin-bottom: 44px;
+    max-width: 440px;
+    margin-bottom: 20px;
   }
-  .hero .ctas{ display:flex; gap: 16px; margin-bottom: 64px; flex-wrap: wrap; }
+  .hero .sub-note{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--outline);
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+  .hero .ctas{ display:flex; align-items:center; gap: 28px; margin-bottom: 72px; flex-wrap: wrap; }
 
   .doc-strip{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid var(--border-subtle);
-    padding-top: 20px;
+    padding-top: 28px;
+    gap: 24px;
   }
   .doc-strip div{
     font-family: 'JetBrains Mono', monospace;
@@ -172,52 +195,36 @@
   .doc-strip span{ display:block; color: var(--on-surface); font-size: 12px; margin-top: 6px; letter-spacing: 0.04em; }
 
   /* ---------- SECTION SHELL ---------- */
-  section{ padding: 96px 0; }
-  .section-head{ margin-bottom: 56px; max-width: 620px; }
-  .section-head .eyebrow{ margin-bottom: 18px; }
-  .section-head h2{ font-size: 34px; line-height: 1.25; margin-bottom: 18px; }
-  .section-head p{ color: var(--on-surface-variant); font-size: 16px; font-weight: 300; }
+  section{ padding: 112px 0; }
+  .section-head{ margin-bottom: 64px; max-width: 540px; }
+  .section-head .eyebrow{ margin-bottom: 20px; }
+  .section-head h2, .section-title{ font-size: 30px; line-height: 1.3; margin-bottom: 20px; }
+  .section-head p{ color: var(--on-surface-variant); font-size: 16px; font-weight: 300; line-height: 1.65; max-width: 480px; }
 
   /* ---------- REPORT PREVIEW ---------- */
-  .report-preview{ background: var(--surface-alt); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+  .report-preview{ background: var(--surface-alt); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 128px 0; }
   .report-grid{
     display:grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 72px;
-    align-items: center;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 96px;
+    align-items: start;
   }
-  .report-copy p{ color: var(--on-surface-variant); font-size: 16px; font-weight: 300; margin-bottom: 20px; max-width: 460px; }
-  .report-copy .mark-row{ display:flex; align-items:center; gap: 14px; margin-top: 36px; }
+  .report-copy .section-title{ margin-top: 20px; }
+  .report-copy p{ color: var(--on-surface-variant); font-size: 16px; font-weight: 300; line-height: 1.65; margin-bottom: 24px; max-width: 420px; }
+  .report-copy .mark-row{ display:flex; align-items:center; gap: 14px; margin-top: 40px; }
 
   .mock-doc{
     background: var(--surface);
     border: 1px solid var(--border-subtle);
-    padding: 40px;
+    padding: 0;
     position: relative;
+    overflow: hidden;
   }
-  .mock-doc-head{
-    display:flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 20px;
-    margin-bottom: 24px;
+  .report-artwork{
+    width: 100%;
+    height: auto;
+    display: block;
   }
-  .mock-doc-head .tag{ font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--outline); }
-  .mock-doc h3{ font-size: 22px; font-weight: 400; margin: 10px 0 4px; }
-  .mock-doc .subject{ font-family: 'Inter', sans-serif; font-size: 13px; color: var(--on-surface-variant); }
-  .mock-stats{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 24px; margin-bottom: 24px; }
-  .mock-stats div{ border-left: 1px solid var(--border-subtle); padding-left: 16px; }
-  .mock-stats div:first-child{ border-left: none; padding-left: 0; }
-  .mock-stats .num{ font-family: 'IBM Plex Serif', serif; font-size: 26px; font-weight: 300; }
-  .mock-stats .lbl{ font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--outline); margin-top: 6px; }
-  .mock-rows div{ display:flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-subtle); font-size: 13px; }
-  .mock-rows div:last-child{ border-bottom: none; }
-  .mock-rows .label{ color: var(--on-surface-variant); }
-  .status-dot{ display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:8px; vertical-align:middle; }
-  .status-ok{ background:#1a1c1c; }
-  .status-review{ background:#a3a3a3; border:1px solid #a3a3a3; background-color: transparent; border-radius:50%; }
-  .status-flag{ background:#1a1c1c; }
 
   /* ---------- PILLARS ---------- */
   .pillars{ }
@@ -226,7 +233,7 @@
     grid-template-columns: 44px 1fr 1.4fr;
     gap: 32px;
     align-items: start;
-    padding: 36px 0;
+    padding: 40px 0;
     border-top: 1px solid var(--border-subtle);
   }
   .pillar-row:last-child{ border-bottom: 1px solid var(--border-subtle); }
@@ -239,8 +246,19 @@
 
   /* ---------- METHOD / ARL ---------- */
   .method{ background: var(--surface-alt); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
-  .method-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 72px; }
-  .method-copy p{ color: var(--on-surface-variant); font-size: 16px; font-weight: 300; margin-bottom: 20px; max-width: 460px; }
+  #methodology{ scroll-margin-top: 84px; }
+  .methodology-close{
+    color: var(--on-surface-variant);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    max-width: 620px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .method-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 88px; }
+  .method-copy p{ color: var(--on-surface-variant); font-size: 16px; font-weight: 300; line-height: 1.65; margin-bottom: 24px; max-width: 420px; }
 
   .arl-flow{ position: relative; padding-left: 28px; }
   .arl-line{ position:absolute; left: 5px; top: 8px; bottom: 8px; width:1px; background: var(--outline-variant); }
@@ -257,35 +275,37 @@
   .sample-frame{
     border: 1px solid var(--border-subtle);
     background: var(--surface-alt);
-    padding: 56px;
-    margin-top: 8px;
+    padding: 64px;
+    margin-top: 12px;
   }
   .sample-doc{
-    max-width: 640px;
+    max-width: 580px;
     margin: 0 auto;
     background: var(--surface);
     border: 1px solid var(--border-subtle);
-    padding: 48px;
+    padding: 0;
+    overflow: hidden;
   }
-  .sample-cta{ display:flex; justify-content: center; margin-top: 40px; }
+  .sample-cta{ display:flex; justify-content: center; margin-top: 36px; }
 
   /* ---------- CLOSING STATEMENT ---------- */
-  .closing{ padding: 128px 0; text-align: left; border-bottom: 1px solid var(--border-subtle); }
+  .closing{ padding: 144px 0; text-align: left; border-bottom: 1px solid var(--border-subtle); }
   .closing p{
     font-family: 'IBM Plex Serif', serif;
     font-style: italic;
     font-weight: 300;
-    font-size: 28px;
-    line-height: 1.5;
-    max-width: 740px;
+    font-size: 26px;
+    line-height: 1.55;
+    max-width: 620px;
     color: var(--on-surface);
   }
-  .closing .attr{ margin-top: 28px; font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-surface-variant); }
+  .closing .attr{ margin-top: 32px; font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-surface-variant); }
+  .closing .ctas{ margin-top: 48px; }
 
   /* ---------- FOOTER ---------- */
   footer{ padding: 56px 0 48px; }
   .footer-top{ display:flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; }
-  .footer-logo{ width: 128px; }
+  .footer-logo{ width: 148px; height: auto; }
   .footer-links{ display:flex; gap: 36px; }
   .footer-links a{ font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-surface-variant); }
   .footer-links a:hover{ color: var(--on-surface); }
@@ -311,9 +331,12 @@
     .report-grid, .method-grid{ grid-template-columns: 1fr; gap: 40px; }
     .pillar-row{ grid-template-columns: 32px 1fr; }
     .pillar-row > p, .pillar-row h3{ grid-column: 2; }
-    section{ padding: 64px 0; }
-    .sample-frame{ padding: 24px; }
-    .sample-doc{ padding: 28px; }
+    section{ padding: 72px 0; }
+    .report-preview{ padding: 80px 0; }
+    .sample-frame{ padding: 28px; }
+    .sample-doc{ padding: 0; }
+    .mock-doc{ padding: 0; }
+    .closing{ padding: 96px 0; }
     .closing p{ font-size: 22px; }
     .footer-top{ flex-direction: column; }
   }
@@ -325,17 +348,10 @@
   <div class="wrap">
     <nav>
       <a href="#top" aria-label="LexAudit home">
-        <svg class="logo-mark" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="30" cy="20" r="2.5" fill="black"/>
-          <line x1="30" y1="22.5" x2="30" y2="44.5" stroke="black" stroke-width="1"/>
-          <circle cx="30" cy="50" r="5.5" stroke="black" stroke-width="1"/>
-          <line x1="30" y1="55.5" x2="30" y2="77.5" stroke="black" stroke-width="1"/>
-          <circle cx="30" cy="85" r="7.5" stroke="black" stroke-width="1"/>
-          <text x="54" y="91" font-family="Inter, sans-serif" font-size="20" font-weight="200" fill="black" style="letter-spacing:0.02em;">LexAudit</text>
-        </svg>
+        <img src="/logo.svg" alt="LexAudit" class="logo-mark" width="165" height="80">
       </a>
       <div class="nav-links nav-links-desktop">
-        <a href="#method">Method</a>
+        <a href="#methodology">Methodology</a>
         <a href="#sample">Sample Report</a>
       </div>
       <div class="nav-cta">
@@ -350,18 +366,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow">Contract Review &amp; Legal Reasoning</div>
+      <div class="eyebrow">Professional Contract Intelligence</div>
       <h1>Understand the agreement.<br>Not just the clauses.</h1>
-      <p class="sub">Professional contract intelligence built for lawyers.</p>
+      <p class="sub">LexAudit analyzes contracts as legal relationships, combining deterministic fact extraction with structured legal reasoning to produce professional memoranda for lawyers.</p>
       <div class="ctas">
         <a href="#demo" class="btn btn-primary">Request a Demo</a>
-        <a href="#sample" class="btn btn-secondary">View Sample Report</a>
+        <a href="/reports/LexAudit_Report_v3.pdf" class="text-link" target="_blank" rel="noopener">View Sample Report</a>
       </div>
       <div class="doc-strip">
-        <div>Prepared For<span>Counsel &amp; Client Review</span></div>
-        <div>Output<span>Structured Legal Memorandum</span></div>
+        <div>Prepared For<span>Counsel &amp; Legal Teams</span></div>
+        <div>Deliverable<span>Structured Legal Memorandum</span></div>
         <div>Basis<span>Deterministic Fact Extraction</span></div>
-        <div>Reasoning<span>Asset · Relationship · Lifecycle · Future</span></div>
+        <div>Method<span>Asset · Relationship · Lifecycle · Future</span></div>
       </div>
     </div>
   </section>
@@ -372,35 +388,25 @@
       <div class="report-grid">
         <div class="report-copy reveal">
           <div class="eyebrow">The Report</div>
-          <h2 style="font-size:32px; margin:18px 0 22px; line-height:1.3;">The report is the product.</h2>
+          <h2 class="section-title">The report is the product.</h2>
           <p>Every review produces a single work product: a structured memorandum that reads the way counsel expects — facts stated plainly, reasoning laid out in order, risk ranked by consequence.</p>
           <p>Nothing is delivered as a dashboard. Nothing is delivered as a score without an argument behind it. The document is written to be handed to a partner, a client, or opposing counsel without translation.</p>
           <div class="mark-row">
             <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="2.5" r="1.6" fill="#1a1c1c"/><line x1="8" y1="4.5" x2="8" y2="11.5" stroke="#1a1c1c" stroke-width="1"/><circle cx="8" cy="13.5" r="2" stroke="#1a1c1c" stroke-width="1" fill="none"/></svg>
-            <span class="eyebrow" style="color:var(--on-surface);">Doc. Ref. LX — Confidential</span>
+            <span class="eyebrow" style="color:var(--on-surface);">Attorney Work Product · Confidential</span>
           </div>
         </div>
 
         <div class="mock-doc reveal">
-          <div class="mock-doc-head">
-            <div>
-              <div class="tag">Contract Review Report · Confidential</div>
-              <h3>Series A SAFE</h3>
-              <div class="subject">Investor × Portfolio Company — Executive Summary</div>
-            </div>
-            <div class="tag" style="text-align:right;">Doc. Ref.<br>LX-2026-0417</div>
-          </div>
-          <div class="mock-stats">
-            <div><div class="num">$2.5M</div><div class="lbl">Investment</div></div>
-            <div><div class="num">20%</div><div class="lbl">Conversion Discount</div></div>
-            <div><div class="num">Med–High</div><div class="lbl">Overall Risk</div></div>
-          </div>
-          <div class="mock-rows">
-            <div><span class="label"><span class="status-dot status-ok"></span>Automatic conversion, qualified financing</span><span>Standard</span></div>
-            <div><span class="label"><span class="status-dot status-review"></span>Anti-dilution formula</span><span>Review</span></div>
-            <div><span class="label"><span class="status-dot status-flag"></span>Indemnification, uncapped</span><span>Flagged</span></div>
-            <div><span class="label"><span class="status-dot status-flag"></span>Investor veto rights, broad</span><span>Flagged</span></div>
-          </div>
+          <img
+            class="report-artwork"
+            src="/reports/lexaudit-report-v3-cover@1x.png"
+            srcset="/reports/lexaudit-report-v3-cover@1x.png 1x, /reports/lexaudit-report-v3-cover.png 2x"
+            width="596"
+            height="842"
+            alt="LexAudit Report V3 cover — Contract Audit Report"
+            loading="lazy"
+            decoding="async">
         </div>
       </div>
     </div>
@@ -440,44 +446,37 @@
     </div>
   </section>
 
-  <!-- METHOD -->
-  <section class="method" id="method">
+  <!-- METHODOLOGY -->
+  <section class="method" id="methodology">
     <div class="wrap">
-      <div class="method-grid">
-        <div class="method-copy reveal">
-          <div class="eyebrow">Intellectual Framework</div>
-          <h2 style="font-size:32px; margin:18px 0 22px; line-height:1.3;">The LexAudit Method</h2>
-          <p>Every agreement is read against a single discipline, applied in order: what is being transferred, what relationship it creates, how that relationship moves through time, and what could happen next.</p>
-          <p>This is the analytical structure behind each report — not a feature, a method of reading a contract the way a senior partner would.</p>
+      <div class="section-head reveal">
+        <h2>Methodology</h2>
+        <p>Every LexAudit report follows a structured analytical process designed to make contractual reasoning explicit, repeatable, and reviewable.</p>
+      </div>
+      <div class="arl-flow reveal">
+        <div class="arl-line"></div>
+        <div class="arl-step filled">
+          <div class="arl-dot"></div>
+          <div class="k">01 — Deterministic Extraction</div>
+          <p>Objective facts are extracted before interpretation begins.</p>
         </div>
-        <div class="arl-flow reveal">
-          <div class="arl-line"></div>
-          <div class="arl-step filled">
-            <div class="arl-dot"></div>
-            <div class="k">01 — Asset</div>
-            <h4>Asset</h4>
-            <p>What is actually being transferred between the parties — the right, the obligation, or the instrument at the center of the agreement.</p>
-          </div>
-          <div class="arl-step filled">
-            <div class="arl-dot"></div>
-            <div class="k">02 — Relationship</div>
-            <h4>Relationship</h4>
-            <p>The standing the parties hold toward one another once the agreement takes effect, and the authority each side carries.</p>
-          </div>
-          <div class="arl-step filled">
-            <div class="arl-dot"></div>
-            <div class="k">03 — Lifecycle</div>
-            <h4>Lifecycle</h4>
-            <p>How that relationship is expected to move through defined stages and triggering events over the life of the agreement.</p>
-          </div>
-          <div class="arl-step">
-            <div class="arl-dot"></div>
-            <div class="k">04 — Future Scenarios</div>
-            <h4>Future Scenarios</h4>
-            <p>The material outcomes counsel should prepare for, and the contractual response already built into the agreement for each.</p>
-          </div>
+        <div class="arl-step filled">
+          <div class="arl-dot"></div>
+          <div class="k">02 — Contracts as Future Relationships</div>
+          <p>Contracts are models of evolving commercial relationships, not merely collections of clauses.</p>
+        </div>
+        <div class="arl-step filled">
+          <div class="arl-dot"></div>
+          <div class="k">03 — ARL Framework</div>
+          <p>Asset → Relationship → Lifecycle → Future Scenarios.</p>
+        </div>
+        <div class="arl-step filled">
+          <div class="arl-dot"></div>
+          <div class="k">04 — Professional Memorandum</div>
+          <p>Findings are presented as legal work product, not software output.</p>
         </div>
       </div>
+      <p class="methodology-close reveal">Every LexAudit report follows this methodology. By separating objective extraction from interpretive reasoning and organizing agreements around assets, relationships, and future scenarios, the resulting analysis is designed to be transparent, repeatable, and suitable for professional legal review.</p>
     </div>
   </section>
 
@@ -486,28 +485,24 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">Sample Report</div>
-        <h2>See the standard.</h2>
-        <p>A full review, unredacted in structure, redacted in substance — the same format delivered to every client.</p>
+        <h2>Review the standard memorandum.</h2>
+        <p>A complete review, unredacted in structure — the same format delivered to every engagement.</p>
       </div>
 
       <div class="sample-frame reveal">
         <div class="sample-doc">
-          <div class="tag" style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--outline);">LexAudit · Contract Review Report · Confidential — Attorney Work Product</div>
-          <h3 style="font-size:26px; font-weight:300; margin:16px 0 4px;">Executive Summary</h3>
-          <div class="subject" style="font-size:13px; color:var(--on-surface-variant); margin-bottom:24px;">Series A SAFE — Investor × Portfolio Company</div>
-          <hr class="hr" style="margin-bottom:24px;">
-          <p style="font-size:14.5px; font-weight:300; color:var(--on-surface-variant); margin-bottom:24px;">
-            The agreement grants the investor the right to convert $2.5M into preferred equity at the next qualified financing, subject to an $18M valuation cap and a 20% discount. The company assumes ongoing reporting obligations, material restrictions on corporate action, and a 36-month founder non-compete. The central exposure lies in uncapped indemnification and unbounded investor information rights.
-          </p>
-          <div class="mock-rows">
-            <div><span class="label">Overall Risk</span><span>Medium–High</span></div>
-            <div><span class="label">Governing Law</span><span>Delaware</span></div>
-            <div><span class="label">Dispute Resolution</span><span>Arbitration</span></div>
-            <div><span class="label">Material Clauses Reviewed</span><span>9</span></div>
-          </div>
+          <img
+            class="report-artwork"
+            src="/reports/lexaudit-report-v3-sample@1x.png"
+            srcset="/reports/lexaudit-report-v3-sample@1x.png 1x, /reports/lexaudit-report-v3-sample.png 2x"
+            width="596"
+            height="842"
+            alt="LexAudit Report V3 — Executive Summary"
+            loading="lazy"
+            decoding="async">
         </div>
         <div class="sample-cta">
-          <a href="#" class="btn btn-secondary">Download Sample Report</a>
+          <a href="/reports/LexAudit_Report_v3.pdf" class="text-link" target="_blank" rel="noopener">Download Sample Report</a>
         </div>
       </div>
     </div>
@@ -516,11 +511,10 @@
   <!-- CLOSING STATEMENT -->
   <section class="closing" id="demo">
     <div class="wrap">
-      <p class="reveal">"If this is the quality of the website, imagine the quality of the report."</p>
-      <div class="attr">— The standard we hold every document to</div>
-      <div class="ctas" style="margin-top:44px;">
-        <a href="#top" class="btn btn-primary">Request a Demo</a>
-        <a href="#sample" class="btn btn-secondary">View Sample Report</a>
+      <p class="reveal">"The memorandum is the engagement. Everything else follows from the standard of the document."</p>
+      <div class="attr">— LexAudit</div>
+      <div class="ctas">
+        <a href="mailto:hello@lexaudit.ai" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
   </section>
@@ -530,16 +524,11 @@
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <svg class="footer-logo" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="20" r="2.5" fill="black"/>
-        <line x1="30" y1="22.5" x2="30" y2="44.5" stroke="black" stroke-width="1"/>
-        <circle cx="30" cy="50" r="5.5" stroke="black" stroke-width="1"/>
-        <line x1="30" y1="55.5" x2="30" y2="77.5" stroke="black" stroke-width="1"/>
-        <circle cx="30" cy="85" r="7.5" stroke="black" stroke-width="1"/>
-        <text x="54" y="91" font-family="Inter, sans-serif" font-size="20" font-weight="200" fill="black" style="letter-spacing:0.02em;">LexAudit</text>
-      </svg>
+      <a href="#top" aria-label="LexAudit home">
+        <img src="/logo.svg" alt="LexAudit" class="footer-logo" width="165" height="80">
+      </a>
       <div class="footer-links">
-        <a href="#method">Method</a>
+        <a href="#methodology">Methodology</a>
         <a href="#sample">Sample Report</a>
         <a href="mailto:hello@lexaudit.ai">Contact</a>
         <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>

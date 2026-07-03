@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 80">
+  <!-- LexAudit Primary Logo (Locked Version) -->
+  <!-- Symbol: Asset -> Relationship -> Lifecycle (middle closer to bottom) -->
+  <line x1="10" y1="6" x2="10" y2="70" stroke="black" stroke-width="1.5"/>
+  <circle cx="10" cy="6" r="2.5" fill="black"/> <!-- Asset -->
+  <circle cx="10" cy="50" r="4.5" fill="white" stroke="black" stroke-width="1.5"/> <!-- Relationship -->
+  <circle cx="10" cy="70" r="6.5" fill="white" stroke="black" stroke-width="1.5"/> <!-- Lifecycle -->
+  
+  <!-- Wordmark: Inter Extra Light (approx), tighter kerning, lighter weight -->
+  <!-- Alignment locked at x=23, y=77 -->
+  <text x="23" y="77" font-family="Inter, sans-serif" font-weight="100" font-size="28" letter-spacing="-0.02em" fill="black">LexAudit</text>
+</svg>

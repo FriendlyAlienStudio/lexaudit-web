@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 80">
+  <!-- LexAudit Logo - Dark Version (Negative) -->
+  <line x1="10" y1="6" x2="10" y2="70" stroke="white" stroke-width="1.5"/>
+  <circle cx="10" cy="6" r="2.5" fill="white"/> <!-- Asset -->
+  <circle cx="10" cy="50" r="4.5" fill="transparent" stroke="white" stroke-width="1.5"/> <!-- Relationship -->
+  <circle cx="10" cy="70" r="6.5" fill="transparent" stroke="white" stroke-width="1.5"/> <!-- Lifecycle -->
+  
+  <text x="23" y="77" font-family="Inter, sans-serif" font-weight="100" font-size="28" letter-spacing="-0.02em" fill="white">LexAudit</text>
+</svg>

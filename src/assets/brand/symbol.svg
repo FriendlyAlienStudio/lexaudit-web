@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 80">
+  <!-- LexAudit Symbol Only -->
+  <line x1="10" y1="6" x2="10" y2="70" stroke="black" stroke-width="1.5"/>
+  <circle cx="10" cy="6" r="2.5" fill="black"/> <!-- Asset -->
+  <circle cx="10" cy="50" r="4.5" fill="white" stroke="black" stroke-width="1.5"/> <!-- Relationship -->
+  <circle cx="10" cy="70" r="6.5" fill="white" stroke="black" stroke-width="1.5"/> <!-- Lifecycle -->
+</svg>
