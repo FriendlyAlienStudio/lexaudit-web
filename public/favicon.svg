@@ -1,7 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Symbol: Asset -> Relationship -> Lifecycle distilled for favicon scale -->
-  <line x1="16" y1="6" x2="16" y2="26" stroke="black" stroke-width="1.5"/>
-  <circle cx="16" cy="6" r="2" fill="black"/>
-  <circle cx="16" cy="16" r="3" fill="none" stroke="black" stroke-width="1.5"/>
-  <circle cx="16" cy="26" r="4.5" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="16" cy="16" r="2.23" fill="#1a1c1c"/>
+  <circle cx="16" cy="26" r="3.73" fill="#1a1c1c"/>
 </svg>
