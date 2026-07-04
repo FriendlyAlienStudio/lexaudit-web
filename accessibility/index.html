@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הצהרת נגישות — LexAudit</title>
+<meta name="description" content="הצהרת הנגישות של אתר LexAudit. האתר חותר לעמוד בדרישות תקן ישראלי ת&quot;י 5568 המבוסס על הנחיות WCAG 2.1 ברמה AA.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface: #ffffff;
+    --surface-alt: #f9f9f9;
+    --surface-container: #f3f3f4;
+    --on-surface: #1a1c1c;
+    --on-surface-variant: #5e5e5e;
+    --outline: #747878;
+    --outline-variant: #c4c7c7;
+    --border-subtle: #e5e5e5;
+    --primary: #000000;
+    --on-primary: #ffffff;
+    --page-margin: 64px;
+    --container-max: 1080px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg{ display:block; max-width:100%; }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .wrap{
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--page-margin);
+  }
+
+  h1, h2, h3{
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    color: var(--on-surface);
+  }
+
+  /* ---------- SKIP LINK ---------- */
+  .skip-link{
+    position: absolute;
+    right: 16px;
+    top: -80px;
+    z-index: 100;
+    background: var(--primary);
+    color: var(--on-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 12px 20px;
+    transition: top 160ms ease;
+  }
+  .skip-link:focus{ top: 12px; }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(6px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 84px;
+  }
+  .logo-mark{ width: 168px; height: auto; }
+  .nav-links{ display:flex; align-items:center; gap: 40px; }
+  .nav-links a{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: color 160ms ease, border-color 160ms ease;
+  }
+  .nav-links a:hover{ color: var(--on-surface); border-color: var(--on-surface); }
+
+  /* ---------- CONTENT ---------- */
+  .doc{ padding: 96px 0 112px; }
+  .doc .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 24px;
+  }
+  .doc h1{
+    font-size: 42px;
+    line-height: 1.25;
+    max-width: 720px;
+    margin-bottom: 20px;
+  }
+  .doc .updated{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--outline);
+    padding-bottom: 40px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .doc-body{ max-width: 720px; }
+  .doc-body section{ margin-bottom: 44px; }
+  .doc-body h2{
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .doc-body p{
+    color: var(--on-surface-variant);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+  .doc-body ul{
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+  .doc-body li{
+    position: relative;
+    color: var(--on-surface-variant);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    padding-inline-start: 22px;
+    margin-bottom: 10px;
+  }
+  .doc-body li::before{
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--on-surface);
+  }
+  .doc-body a{
+    color: var(--on-surface);
+    border-bottom: 1px solid var(--outline-variant);
+    padding-bottom: 1px;
+    transition: border-color 160ms ease;
+  }
+  .doc-body a:hover{ border-color: var(--on-surface); }
+  .doc-body strong{ font-weight: 500; color: var(--on-surface); }
+  .placeholder{
+    display: inline-block;
+    background: var(--surface-container);
+    border: 1px dashed var(--outline-variant);
+    padding: 1px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--on-surface-variant);
+  }
+  .contact-card{
+    background: var(--surface-alt);
+    border: 1px solid var(--border-subtle);
+    padding: 28px 32px;
+    margin-top: 8px;
+  }
+  .contact-card dt{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--outline);
+    margin-bottom: 4px;
+  }
+  .contact-card dd{ margin: 0 0 20px; font-size: 16px; font-weight: 300; color: var(--on-surface); }
+  .contact-card dd:last-child{ margin-bottom: 0; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding: 56px 0 48px; border-top: 1px solid var(--border-subtle); }
+  .footer-top{ display:flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; }
+  .footer-logo{ width: 148px; height: auto; }
+  .footer-links{ display:flex; gap: 36px; flex-wrap: wrap; }
+  .footer-links a{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+  }
+  .footer-links a:hover{ color: var(--on-surface); }
+  .footer-bottom{ display:flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 12px; }
+  .footer-bottom span{ font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--outline); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .skip-link{ transition: none; }
+  }
+
+  @media (max-width: 860px){
+    :root{ --page-margin: 24px; }
+    .doc{ padding: 56px 0 72px; }
+    .doc h1{ font-size: 30px; }
+    .footer-top{ flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">דילוג לתוכן המרכזי</a>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="ניווט ראשי">
+      <a href="/" aria-label="LexAudit — דף הבית">
+        <img src="/logo.svg" alt="LexAudit" class="logo-mark" width="165" height="80">
+      </a>
+      <div class="nav-links">
+        <a href="/">דף הבית</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc" tabindex="-1">
+  <div class="wrap">
+    <p class="eyebrow">LexAudit</p>
+    <h1>הצהרת נגישות</h1>
+    <p class="updated">עודכן לאחרונה: 4 ביולי 2026</p>
+
+    <div class="doc-body">
+      <section aria-labelledby="purpose-h">
+        <h2 id="purpose-h">מטרת ההצהרה</h2>
+        <p>הצהרה זו מתארת את המחויבות של LexAudit להנגשת אתר האינטרנט שלה לכלל המשתמשים, לרבות אנשים עם מוגבלות, ואת הצעדים שננקטו לשם כך. מטרתנו היא לאפשר לכל אדם לגלוש באתר, לצרוך את המידע המוצג בו וליצור עמנו קשר בצורה נוחה, עצמאית ושוויונית.</p>
+      </section>
+
+      <section aria-labelledby="commitment-h">
+        <h2 id="commitment-h">המחויבות שלנו לנגישות דיגיטלית</h2>
+        <p>אנו רואים בנגישות הדיגיטלית ערך מקצועי ומוסרי, ופועלים כדי שחוויית השימוש באתר תהיה זמינה עבור מגוון רחב של משתמשים וטכנולוגיות מסייעות, ובכלל זה תוכנות הקראת מסך וניווט באמצעות מקלדת. אנו משקיעים מאמצים סבירים לשיפור מתמשך של רמת הנגישות באתר.</p>
+      </section>
+
+      <section aria-labelledby="standard-h">
+        <h2 id="standard-h">התקן שאליו אנו חותרים</h2>
+        <p>האתר <strong>חותר לעמוד</strong> בדרישות תקן ישראלי ת"י 5568 בנושא נגישות תכנים באינטרנט, המבוסס על הנחיות <span dir="ltr">WCAG 2.1</span> של ארגון <span dir="ltr">W3C</span> ברמת התאמה <span dir="ltr">AA</span>.</p>
+        <p>יובהר כי נכון למועד פרסום הצהרה זו, האתר <strong>טרם נבדק ואושר כתואם באופן מלא</strong> לכל דרישות התקן. איננו מצהירים על עמידה מלאה בכל הדרישות, ואנו ממשיכים לפעול לצמצום הפערים.</p>
+      </section>
+
+      <section aria-labelledby="ongoing-h">
+        <h2 id="ongoing-h">נגישות כתהליך מתמשך</h2>
+        <p>הנגשת האתר היא תהליך מתמשך. אנו בוחנים מעת לעת את רכיבי האתר ומעדכנים אותם, ומתקנים ליקויים שמתגלים או מדווחים לנו. ייתכן שחלקים מסוימים באתר טרם הונגשו במלואם, ואנו פועלים להשלמתם בהדרגה.</p>
+      </section>
+
+      <section aria-labelledby="browsers-h">
+        <h2 id="browsers-h">דפדפנים ומכשירים נתמכים</h2>
+        <p>האתר נבנה כך שיתמוך בגרסאות העדכניות של הדפדפנים והמכשירים הנפוצים:</p>
+        <ul>
+          <li>דפדפנים במחשב שולחני: <span dir="ltr">Google Chrome</span>, <span dir="ltr">Mozilla Firefox</span>, <span dir="ltr">Microsoft Edge</span> ו-<span dir="ltr">Apple Safari</span> (גרסה עדכנית).</li>
+          <li>מכשירים ניידים: מכשירי <span dir="ltr">iOS</span> ו-<span dir="ltr">Android</span> בדפדפן ברירת המחדל שלהם.</li>
+          <li>טכנולוגיות מסייעות: תמיכה בתוכנות הקראת מסך וניווט מקלדת בדפדפנים הנתמכים.</li>
+        </ul>
+        <p>מומלץ להשתמש בגרסה העדכנית ביותר של הדפדפן לקבלת חוויית הגלישה המיטבית.</p>
+      </section>
+
+      <section aria-labelledby="limitations-h">
+        <h2 id="limitations-h">מגבלות ידועות</h2>
+        <p>למרות מאמצינו, ייתכן שיימצאו באתר רכיבים או תכנים שטרם הונגשו במלואם. בכלל זה:</p>
+        <ul>
+          <li>מסמכים להורדה בפורמט <span dir="ltr">PDF</span> (כגון דוגמאות דוחות) עשויים שלא להיות נגישים במלואם. נשמח לספק את המידע הכלול בהם בפורמט חלופי נגיש לפי בקשה.</li>
+          <li>חלקים מתוכן האתר מוצגים בשפה האנגלית.</li>
+        </ul>
+        <p>אם נתקלתם ברכיב שאינו נגיש, נודה לכם על פנייה אלינו כמפורט להלן, ונפעל לטפל בכך בהקדם.</p>
+      </section>
+
+      <section aria-labelledby="contact-h">
+        <h2 id="contact-h">פנייה בנושאי נגישות</h2>
+        <p>אם נתקלתם בקושי כלשהו בגלישה באתר או בשימוש בשירותי האתר, נשמח אם תפנו אלינו. אנו רואים חשיבות רבה בשיפור מתמיד של נגישות האתר ונעשה מאמץ לטפל בכל פנייה בהקדם. אנא כללו בפנייתכם תיאור מפורט של הבעיה, כתובת הדף שבו היא הופיעה וסוג הדפדפן והמכשיר שבהם השתמשתם.</p>
+        <dl class="contact-card">
+          <dt>אחראי לפניות בנושא נגישות</dt>
+          <dd>צוות LexAudit</dd>
+
+          <dt>דואר אלקטרוני</dt>
+          <dd><a href="mailto:hello@lexaudit.ai">hello@lexaudit.ai</a></dd>
+
+          <dt>טלפון</dt>
+          <dd><a href="tel:+972544561132" dir="ltr">+972-54-456-1132</a></dd>
+
+          <dt>זמני מענה</dt>
+          <dd>ימים א'–ה', בין השעות <span dir="ltr">09:00–17:00</span></dd>
+
+          <dt>זמן טיפול בפנייה</dt>
+          <dd>אנו עושים מאמץ להשיב לפניות בנושא נגישות בתוך 7 ימי עסקים.</dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="/" aria-label="LexAudit — דף הבית">
+        <img src="/logo.svg" alt="LexAudit" class="footer-logo" width="165" height="80">
+      </a>
+      <nav class="footer-links" aria-label="קישורי תחתית">
+        <a href="/">דף הבית</a>
+        <a href="/accessibility/" aria-current="page">הצהרת נגישות</a>
+        <a href="mailto:hello@lexaudit.ai">צור קשר</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LexAudit. All rights reserved.</span>
+      <span>Confidential — Prepared for Professional Use</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

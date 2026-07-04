@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 <title>LexAudit — Professional Contract Intelligence</title>
+<meta name="description" content="LexAudit analyzes contracts as legal relationships — combining deterministic fact extraction with structured legal reasoning to produce professional memoranda for lawyers.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -109,6 +111,23 @@
     transition: color 160ms ease, border-color 160ms ease;
   }
   .text-link:hover{ color: var(--on-surface); border-color: var(--on-surface); }
+
+  /* ---------- SKIP LINK ---------- */
+  .skip-link{
+    position: absolute;
+    left: 16px;
+    top: -80px;
+    z-index: 100;
+    background: var(--primary);
+    color: var(--on-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    transition: top 160ms ease;
+  }
+  .skip-link:focus{ top: 12px; }
 
   /* ---------- NAV ---------- */
   header{
@@ -313,11 +332,14 @@
   .footer-bottom span{ font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--outline); }
 
   /* ---------- REVEAL ---------- */
-  .reveal{ opacity: 0; transform: translateY(14px); transition: opacity 700ms ease, transform 700ms ease; }
-  .reveal.in{ opacity: 1; transform: translateY(0); }
+  /* Reveal hiding only applies once JS has initialized (html.js), so content
+     stays visible when JavaScript is disabled, fails, or is still loading. */
+  .js .reveal{ opacity: 0; transform: translateY(14px); transition: opacity 700ms ease, transform 700ms ease; }
+  .js .reveal.in{ opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
+    .js .reveal{ opacity:1; transform:none; transition:none; }
     html{ scroll-behavior:auto; }
+    .skip-link{ transition:none; }
   }
 
   /* ---------- RESPONSIVE ---------- */
@@ -344,9 +366,11 @@
 </head>
 <body>
 
+<a href="#top" class="skip-link">Skip to main content</a>
+
 <header>
   <div class="wrap">
-    <nav>
+    <nav aria-label="Primary">
       <a href="#top" aria-label="LexAudit home">
         <img src="/logo.svg" alt="LexAudit" class="logo-mark" width="165" height="80">
       </a>
@@ -361,7 +385,7 @@
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
   <!-- HERO -->
   <section class="hero">
@@ -392,7 +416,7 @@
           <p>Every review produces a single work product: a structured memorandum that reads the way counsel expects — facts stated plainly, reasoning laid out in order, risk ranked by consequence.</p>
           <p>Nothing is delivered as a dashboard. Nothing is delivered as a score without an argument behind it. The document is written to be handed to a partner, a client, or opposing counsel without translation.</p>
           <div class="mark-row">
-            <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="2.5" r="1.6" fill="#1a1c1c"/><line x1="8" y1="4.5" x2="8" y2="11.5" stroke="#1a1c1c" stroke-width="1"/><circle cx="8" cy="13.5" r="2" stroke="#1a1c1c" stroke-width="1" fill="none"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="2.5" r="1.6" fill="#1a1c1c"/><line x1="8" y1="4.5" x2="8" y2="11.5" stroke="#1a1c1c" stroke-width="1"/><circle cx="8" cy="13.5" r="2" stroke="#1a1c1c" stroke-width="1" fill="none"/></svg>
             <span class="eyebrow" style="color:var(--on-surface);">Attorney Work Product · Confidential</span>
           </div>
         </div>
@@ -423,21 +447,21 @@
       <div class="pillars">
         <div class="pillar-row reveal">
           <div class="pillar-node">
-            <svg class="node" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2" fill="#1a1c1c"/></svg>
+            <svg class="node" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="2" fill="#1a1c1c"/></svg>
           </div>
           <h3>Deterministic Facts</h3>
           <p>Objective extraction of contractual information — parties, terms, dates, and figures, taken directly from the instrument with no interpretation layered in.</p>
         </div>
         <div class="pillar-row reveal">
           <div class="pillar-node">
-            <svg class="node" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4" stroke="#1a1c1c" stroke-width="1" fill="none"/></svg>
+            <svg class="node" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="4" stroke="#1a1c1c" stroke-width="1" fill="none"/></svg>
           </div>
           <h3>Structured Legal Reasoning</h3>
           <p>Analysis of the legal and commercial structure of the agreement — the relationship it creates and how that relationship changes over time — not only the individual clauses.</p>
         </div>
         <div class="pillar-row reveal">
           <div class="pillar-node">
-            <svg class="node" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" stroke="#1a1c1c" stroke-width="1" fill="none"/><circle cx="8" cy="8" r="1.4" fill="#1a1c1c"/></svg>
+            <svg class="node" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6" stroke="#1a1c1c" stroke-width="1" fill="none"/><circle cx="8" cy="8" r="1.4" fill="#1a1c1c"/></svg>
           </div>
           <h3>Professional Work Product</h3>
           <p>Reports designed for lawyers, clients, and decision-makers — formatted, cited, and reasoned as a memorandum, not rendered as software output.</p>
@@ -527,12 +551,13 @@
       <a href="#top" aria-label="LexAudit home">
         <img src="/logo.svg" alt="LexAudit" class="footer-logo" width="165" height="80">
       </a>
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Footer">
         <a href="#methodology">Methodology</a>
         <a href="#sample">Sample Report</a>
+        <a href="/accessibility/" lang="he">הצהרת נגישות</a>
         <a href="mailto:hello@lexaudit.ai">Contact</a>
         <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      </nav>
     </div>
     <div class="footer-bottom">
       <span>© 2026 LexAudit. All rights reserved.</span>
