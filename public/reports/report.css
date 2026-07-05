@@ -1,0 +1,767 @@
+/* ==========================================================================
+   LexAudit Report — reusable presentation layer
+   --------------------------------------------------------------------------
+   Design system for polished sample reports. Presentation only: swap the
+   HTML content and keep this stylesheet to produce new reports in the same
+   visual language. RTL-first, responsive, print/PDF-aware, accessible.
+   ========================================================================== */
+
+:root {
+  --paper: #f8f6f0;          /* warm editorial paper */
+  --surface: #f1eee5;
+  --surface-2: #eae6db;      /* darker board behind the page */
+  --ink: #17181a;
+  --ink-muted: #45474a;
+  --ink-faint: #63655f;      /* passes AA on warm paper for small text */
+  --line: #d8d3c5;           /* subtle warm hairline */
+  --line-strong: #bab5a6;
+  --rule: #1a1c1c;           /* strong editorial separator */
+  --accent: #8a6a3c;         /* bronze — matches v3 accent */
+  --accent-deep: #6f5430;
+
+  /* Restrained, accessible status colors */
+  --critical-fg: #8a2a24;
+  --moderate-fg: #7d5716;
+  --clean-fg: #2f6b3a;
+
+  --page-w: 820px;
+  --page-pad: 72px;
+
+  --font-serif: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, system-ui, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { direction: rtl; }
+
+body {
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  padding: 40px 16px;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* Skip link ---------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  right: 16px;
+  top: -80px;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 12px 20px;
+  transition: top 160ms ease;
+}
+.skip-link:focus { top: 16px; }
+
+/* ==========================================================================
+   Report shell & pages
+   ========================================================================== */
+.report {
+  max-width: var(--page-w);
+  margin: 0 auto;
+}
+
+.page {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03), 0 18px 50px rgba(30, 26, 15, 0.10);
+  padding: var(--page-pad);
+  margin: 0 auto 28px;
+  min-height: 1120px;            /* ~A4 proportion on screen */
+  display: flex;
+  flex-direction: column;
+}
+.page:last-child { margin-bottom: 0; }
+
+/* Running header / footer are decorative page furniture (aria-hidden) ------- */
+.running {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.running--head { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.running--foot { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); }
+.running .rk-center { letter-spacing: 0.3em; color: var(--ink-muted); }
+.running--head .rk-center { font-weight: 500; }
+/* Page count ("05 / 10") is the last footer item. Force an isolated LTR
+   context so the two numbers keep their intended order in this RTL document
+   (otherwise bidi reorders it to "10 / 05"). */
+.running--foot > span:last-child { direction: ltr; unicode-bidi: isolate; }
+
+.page-body { padding: 44px 0; flex: 1 0 auto; }
+
+/* ==========================================================================
+   Typography primitives (reusable)
+   ========================================================================== */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.eyebrow .num { color: var(--ink); font-weight: 500; }
+
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--ink); }
+
+.section-title { font-size: 38px; line-height: 1.12; letter-spacing: -0.005em; margin-bottom: 14px; }
+.section-title--lg { font-size: 54px; }
+
+.lead {
+  color: var(--ink-muted);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 62ch;
+  margin-bottom: 44px;
+}
+
+.prose p { color: var(--ink); font-weight: 300; font-size: 16px; line-height: 1.8; margin-bottom: 18px; max-width: 64ch; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose--justify p { text-align: justify; }
+.prose--justify p:first-of-type::first-letter {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 2.6em;
+  line-height: 0.8;
+  float: inline-start;
+  margin-inline-end: 6px;
+  color: var(--ink);
+}
+.lang-ltr { unicode-bidi: isolate; direction: ltr; }
+
+.rule { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+
+.footnote {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin-top: auto;
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footnote .fn-tag { text-transform: uppercase; letter-spacing: 0.16em; }
+
+/* ==========================================================================
+   Cover masthead
+   ========================================================================== */
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.masthead .logo { width: 150px; height: auto; }
+.masthead .mast-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.cover-head { padding: 168px 0 8px; }
+.cover-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+.cover-report-line {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+.section-title--lg { letter-spacing: -0.01em; }
+.cover-sub {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 26px;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* Numbered meta grid (cover) — bordered editorial cells ------------------- */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 44px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.meta-item {
+  padding: 26px 24px;
+  border-top: 1px solid var(--line);
+  border-inline-start: 1px solid var(--line);
+}
+.meta-item:nth-child(-n + 3) { border-top: none; }
+.meta-item:nth-child(3n + 1) { border-inline-start: none; }
+.meta-item .m-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+.meta-item .m-num { color: var(--accent); }
+.meta-item .m-value {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.meta-item .m-value.accent { color: var(--accent); }
+.meta-item .m-value.mono, .meta-item .m-value .lang-ltr {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+/* Cover disclaimer with decorative node mark */
+.cover-note {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+.disclaimer { color: var(--ink-muted); font-weight: 300; font-size: 15px; line-height: 1.7; max-width: 60ch; }
+.cover-note__glyph { display: flex; flex-direction: column; gap: 7px; padding-top: 4px; flex-shrink: 0; }
+.cover-note__glyph span { width: 9px; height: 9px; border-radius: 50%; }
+.cover-note__glyph span:first-child { background: var(--ink); }
+.cover-note__glyph span:not(:first-child) { border: 1px solid var(--line-strong); }
+
+.cover-foot {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.cover-foot .page-id { letter-spacing: 0.3em; color: var(--ink-muted); }
+
+/* ==========================================================================
+   Metrics (executive summary)
+   ========================================================================== */
+.split {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 60px;
+  align-items: start;
+}
+.metric-stack { display: flex; flex-direction: column; gap: 30px; }
+.metric { border-top: 1px solid var(--rule); padding-top: 14px; }
+.metric .m-figure {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+}
+.metric .m-figure.accent { color: var(--accent); }
+.metric .m-key {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 12px 0 4px;
+}
+.metric .m-caption { font-size: 13.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.45; }
+.dots { display: flex; gap: 8px; }
+.dots span { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.dots span.hollow { background: transparent; border: 1px solid var(--line-strong); }
+
+/* ==========================================================================
+   Facts grid (contract facts)
+   ========================================================================== */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.fact {
+  padding: 24px 22px;
+  border-bottom: 1px solid var(--line);
+  border-inline-start: 1px solid var(--line);
+}
+.fact:nth-child(3n + 1) { border-inline-start: none; }
+.fact .f-key {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+.fact .f-value {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.fact .f-sub { font-size: 13px; color: var(--ink-muted); font-weight: 300; margin-top: 6px; }
+
+/* ==========================================================================
+   ARL list & scenarios
+   ========================================================================== */
+.arl-list { display: flex; flex-direction: column; }
+
+/* ARL Core page — fixed three-column row grid (metadata | body | glyph).
+   Rows use direction:ltr so column order is stable regardless of page RTL. */
+.page--arl-core .page-body { padding: 28px 0 20px; }
+.page--arl-core .lead { margin-bottom: 24px; }
+
+.page--arl-core .arl-item {
+  display: grid;
+  direction: ltr;
+  grid-template-columns: 150px 1fr 44px;
+  gap: 20px 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.page--arl-core .arl-item:last-child { border-bottom: 1px solid var(--line); }
+
+.page--arl-core .arl-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 6px;
+  white-space: nowrap;
+  text-align: left;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.page--arl-core .arl-body {
+  direction: rtl;
+  text-align: right;
+  min-width: 0;
+}
+.page--arl-core .arl-body h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.page--arl-core .arl-body p {
+  color: var(--ink-muted);
+  font-weight: 300;
+  font-size: 14.5px;
+  line-height: 1.55;
+  max-width: none;
+}
+.page--arl-core .arl-body .dot-list { gap: 3px; }
+.page--arl-core .arl-body .dot-list li {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.page--arl-core .arl-glyph {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 0.85;
+  justify-self: end;
+  text-align: right;
+}
+
+/* Generic ARL item fallback (reusable outside ARL Core page) */
+.arl-item {
+  display: grid;
+  grid-template-columns: 44px 1fr 150px;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.arl-glyph {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 0.85;
+}
+.arl-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 6px;
+  white-space: nowrap;
+  text-align: left;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.arl-item h3 { font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+.arl-item p { color: var(--ink-muted); font-weight: 300; font-size: 15px; line-height: 1.72; max-width: 56ch; }
+
+/* Retained scenario component (unused by current report but kept reusable) */
+.scenario {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+.sc-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+}
+.scenario h3 { font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+.scenario p { color: var(--ink-muted); font-weight: 300; font-size: 15px; max-width: 60ch; }
+
+/* ==========================================================================
+   Clause review table
+   ========================================================================== */
+.table-wrap { overflow-x: auto; }
+.clause-table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.5; }
+.clause-table caption { text-align: right; color: var(--ink-faint); font-size: 12px; margin-bottom: 14px; }
+.clause-table th, .clause-table td {
+  text-align: right;
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.clause-table th:first-child, .clause-table td:first-child { padding-inline-start: 0; }
+.clause-table th:last-child, .clause-table td:last-child { padding-inline-end: 0; }
+/* Clause Review content: a visible inset from the left page edge while the
+   right edge stays aligned with the headings. A physical left margin is used
+   (not padding): .table-wrap is an overflow-x:auto scroll container, which
+   drops end-edge padding — the left edge in RTL — so the inset never painted. */
+.table-wrap--clauses { margin-left: 36px; }
+.clause-table thead th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 400;
+  padding-top: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.clause-table tbody td { color: var(--ink); font-weight: 300; }
+.clause-table .lex-id { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); white-space: nowrap; }
+.clause-table tfoot td {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  border-bottom: none;
+  padding-top: 18px;
+}
+
+/* Status tag (reusable) ---------------------------------------------------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.tag--critical { color: var(--critical-fg); }
+.tag--moderate { color: var(--moderate-fg); }
+.tag--clean { color: var(--clean-fg); }
+
+/* ==========================================================================
+   Exposure cards
+   ========================================================================== */
+.exposures { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.exposure {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--rule);
+  padding: 26px 28px;
+  background: var(--surface);
+}
+.exposure.is-critical { border-top-color: var(--critical-fg); }
+.exposure.is-moderate { border-top-color: var(--moderate-fg); }
+.exposure .e-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+.exposure h3 { font-size: 19px; font-weight: 400; line-height: 1.3; margin-bottom: 10px; }
+.exposure p { color: var(--ink-muted); font-weight: 300; font-size: 14.5px; line-height: 1.65; }
+.exposure .e-sev { margin-top: auto; padding-top: 20px; }
+
+/* ==========================================================================
+   Recommendations
+   ========================================================================== */
+.rec-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+.rec-item:last-child { border-bottom: 1px solid var(--line); }
+.rec-num {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: var(--ink);
+}
+.rec-body h3 { font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+.rec-body p { color: var(--ink); font-weight: 300; font-size: 16px; line-height: 1.72; max-width: 62ch; }
+
+/* ==========================================================================
+   Counsel memo
+   ========================================================================== */
+.memo-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 32px;
+  padding: 24px 0;
+  margin-bottom: 32px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.memo-meta .mm-k {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+}
+.memo-meta .mm-v { font-size: 15px; color: var(--ink); }
+.memo-note { margin-bottom: 24px; }
+.memo-note h3 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.memo-note p { color: var(--ink-muted); font-weight: 300; max-width: 66ch; }
+.signature {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.signature .s-name { font-family: var(--font-serif); font-size: 18px; }
+.signature .s-role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-top: 4px; }
+
+/* ==========================================================================
+   Content utilities (reusable list / chip / notes primitives)
+   ========================================================================== */
+.tick-list, .dot-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.tick-list li, .dot-list li {
+  position: relative;
+  padding-inline-start: 22px;
+  color: var(--ink);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.tick-list li::before {
+  content: "\2713";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  color: var(--clean-fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.dot-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 4px;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Key/value stacked list (e.g. governance, ownership) */
+.kv-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.kv-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--ink);
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--line);
+}
+.kv-list li:last-child { border-bottom: none; }
+.kv-list .kv-k { color: var(--ink-muted); font-weight: 300; }
+.kv-list .kv-v { text-align: start; }
+
+/* Flag list (key issues to review) */
+.flag-list { list-style: none; }
+.flag-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+.flag-item:last-child { border-bottom: 1px solid var(--line); }
+.flag-item p { color: var(--ink); font-weight: 300; max-width: 62ch; }
+
+/* Chip row (clause summary counts) */
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; margin-bottom: 30px; }
+
+/* Collapsible audit trail */
+.audit-trail { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 18px; }
+.audit-trail > summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.audit-trail > summary::-webkit-details-marker { display: none; }
+.audit-trail > summary::before { content: "+ "; }
+.audit-trail[open] > summary::before { content: "\2212 "; }
+.audit-trail__body { margin-top: 18px; }
+
+/* Counsel notes placeholder */
+.notes-hint { color: var(--ink-muted); font-weight: 300; margin-bottom: 22px; }
+.notes-area {
+  min-height: 380px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 33px,
+      var(--line) 33px,
+      var(--line) 34px
+    );
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 760px) {
+  :root { --page-pad: 28px; }
+  body { padding: 16px 0; }
+  .page { min-height: 0; border-left: none; border-right: none; }
+  .split { grid-template-columns: 1fr; gap: 36px; }
+  .cover-head { padding-top: 72px; }
+  .cover-report-line { font-size: 17px; }
+  .cover-note { flex-direction: column; gap: 22px; }
+  .meta-grid, .facts, .memo-meta { grid-template-columns: 1fr 1fr; }
+  .exposures { grid-template-columns: 1fr; }
+  .section-title { font-size: 27px; }
+  .section-title--lg { font-size: 34px; }
+  .rec-item { grid-template-columns: 44px 1fr; gap: 18px; }
+  .page--arl-core .arl-item {
+    direction: rtl;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+  }
+  .page--arl-core .arl-kicker {
+    grid-column: 2;
+    padding-top: 0;
+    margin-top: 2px;
+  }
+  .page--arl-core .arl-glyph { grid-column: 1; grid-row: 1; }
+  .page--arl-core .arl-body { grid-column: 2; }
+}
+@media (max-width: 460px) {
+  .meta-grid, .facts, .memo-meta { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}
+
+/* ==========================================================================
+   Print / PDF
+   ========================================================================== */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: #fff; padding: 0; }
+  .skip-link { display: none; }
+  .report { max-width: none; }
+  .page {
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    break-after: page;
+    page-break-after: always;
+  }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  .page--arl-core .page-body { padding: 20px 0 12px; }
+  .page--arl-core .lead { margin-bottom: 16px; }
+  .page--arl-core .arl-item { padding: 10px 0; gap: 14px 20px; }
+  .page--arl-core .arl-body .dot-list li { font-size: 13.5px; line-height: 1.3; }
+  .exposure, .arl-item, .scenario, .rec-item, .flag-item, .clause-table tr { break-inside: avoid; page-break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+  /* Expand the audit trail so print/PDF shows every clause */
+  .audit-trail > summary { display: none; }
+  .audit-trail__body { display: block !important; }
+}

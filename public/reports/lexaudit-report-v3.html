@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דוח ניתוח חוזה — הסכם בעלי מניות · LexAudit</title>
+<meta name="description" content="דוח ניתוח חוזה לדוגמה של LexAudit — הסכם בעלי מניות (Co-Ownership): תקציר מנהלים, עובדות ההסכם, מודל יחסים (ARL), סקירת סעיפים, חשיפות מרכזיות והמלצות.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/reports/report.css">
+</head>
+<body>
+
+<a href="#report-main" class="skip-link">דילוג לתוכן הדו״ח</a>
+
+<main id="report-main" class="report">
+
+  <!-- ==================== COVER ==================== -->
+  <section class="page" aria-labelledby="cover-title">
+    <div class="masthead">
+      <img class="logo" src="/logo.svg" alt="LexAudit" width="150" height="72">
+      <span class="mast-tag" aria-hidden="true">V 3 . 0 . 4</span>
+    </div>
+
+    <div class="page-body">
+      <div class="cover-head">
+        <p class="cover-kicker"><span class="lang-ltr">Confidential // Preliminary Review</span></p>
+        <p class="cover-report-line"><span class="lang-ltr">LexAudit Report V3</span></p>
+        <h1 id="cover-title" class="section-title section-title--lg">דוח ניתוח חוזה</h1>
+        <p class="cover-sub">ניתוח משפטי של הסכם בעלי מניות</p>
+      </div>
+
+      <dl class="meta-grid">
+        <div class="meta-item">
+          <dt class="m-label"><span>מסמך</span><span class="m-num">01</span></dt>
+          <dd class="m-value">הסכם בעלי מניות</dd>
+        </div>
+        <div class="meta-item">
+          <dt class="m-label"><span>סוג ההסכם</span><span class="m-num">02</span></dt>
+          <dd class="m-value mono"><span class="lang-ltr">Co-Ownership → Shareholders</span></dd>
+        </div>
+        <div class="meta-item">
+          <dt class="m-label"><span>רמת סיכון</span><span class="m-num">03</span></dt>
+          <dd class="m-value accent">בינונית</dd>
+        </div>
+        <div class="meta-item">
+          <dt class="m-label"><span>תאריך ניתוח</span><span class="m-num">04</span></dt>
+          <dd class="m-value mono"><span class="lang-ltr">05.07.2026</span></dd>
+        </div>
+        <div class="meta-item">
+          <dt class="m-label"><span>גרסת מנוע</span><span class="m-num">05</span></dt>
+          <dd class="m-value mono"><span class="lang-ltr">LexAudit V3</span></dd>
+        </div>
+        <div class="meta-item">
+          <dt class="m-label"><span>מתודולוגיה</span><span class="m-num">06</span></dt>
+          <dd class="m-value mono"><span class="lang-ltr">ARL</span></dd>
+        </div>
+      </dl>
+
+      <div class="cover-note">
+        <p class="disclaimer">LexAudit — דוח לצורכי סקירה ראשונית בלבד. אינו מהווה ייעוץ משפטי.</p>
+        <span class="cover-note__glyph" aria-hidden="true"><span></span><span></span><span></span></span>
+      </div>
+    </div>
+
+    <div class="cover-foot" aria-hidden="true">
+      <span class="page-id">LA · 01</span>
+      <span>© 2026 LexAudit</span>
+    </div>
+  </section>
+
+  <!-- ==================== 01 · EXECUTIVE SUMMARY ==================== -->
+  <section class="page" aria-labelledby="s-exec">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Executive Summary</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">01</span> · תקציר מנהלים</p>
+      <h2 id="s-exec" class="section-title">תקציר מנהלים</h2>
+      <p class="lead">ממצאים עיקריים, רמת סיכון כוללת ונקודות פעולה מרכזיות.</p>
+
+      <div class="split">
+        <div class="metric-stack">
+          <div class="metric">
+            <div class="m-figure accent">בינונית</div>
+            <div class="m-key">Risk Level</div>
+            <div class="m-caption">רמת סיכון כוללת</div>
+          </div>
+          <div class="metric">
+            <div class="m-figure">17</div>
+            <div class="m-key">Clauses Present</div>
+            <div class="m-caption">סעיפים שזוהו כקיימים</div>
+          </div>
+          <div class="metric">
+            <div class="m-figure">3</div>
+            <div class="m-key">Missing</div>
+            <div class="m-caption">סעיפים חסרים</div>
+          </div>
+          <div class="metric">
+            <div class="m-figure">1</div>
+            <div class="m-key">Unclear</div>
+            <div class="m-caption">סעיפים לא ברורים</div>
+          </div>
+        </div>
+
+        <div class="prose prose--justify">
+          <p>ההסכם מתאר הסדרת הזכויות והאחריות של רועי ישראלי והקרן אינווסט-טק כנושאי 60% ו-40% מהון המניות בהתאמה בחברת ״אלפא פתרונות בינה מלאכותית בע״מ״. ההסכם כולל הקצאות מניות, ממשל חברה, מנגנוני גיוס הון ודילול, וזכויות יציאה כגון <span class="lang-ltr">drag-along</span> ו-<span class="lang-ltr">tag-along</span>. נקודות סיכון מרכזיות הן העדר מנגנון וסטינג למחויבות המייסד, הבהרות חסרות בהתחייבויות הכספיות, והיקף חסימת המניות המצומצם לפרק זמן מוגבל. מומלץ להוסיף מנגנון וסטינג ולחדד תנאי העברת מניות למניעת מחלוקות עתידיות ולשפר את ההגנה על האינטרסים העסקיים של הצדדים.</p>
+        </div>
+      </div>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 02</span><span>02 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 02 · KEY ISSUES ==================== -->
+  <section class="page" aria-labelledby="s-issues">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Key Issues</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">02</span> · נקודות מרכזיות</p>
+      <h2 id="s-issues" class="section-title">נקודות מרכזיות לבדיקה</h2>
+      <p class="lead">הממצאים המהותיים שאותרו בהסכם ומחייבים תשומת לב טרם החתימה.</p>
+
+      <ul class="flag-list">
+        <li class="flag-item">
+          <span class="tag tag--critical">סיכון</span>
+          <p>ההסכם אינו כולל הוראות מפורשות בנוגע להתחייבויות כספיות נוספות מצד המייסד.</p>
+        </li>
+        <li class="flag-item">
+          <span class="tag tag--critical">סיכון</span>
+          <p>תקופת החסימה מתמקדת רק במייסד ואינה חלה על המשקיע.</p>
+        </li>
+        <li class="flag-item">
+          <span class="tag tag--critical">סיכון</span>
+          <p>היעדר מנגנון וסטינג והתחייבות להמשך תפקיד המייסד.</p>
+        </li>
+        <li class="flag-item">
+          <span class="tag tag--critical">סיכון</span>
+          <p>העברת מניות מוגבלת אך לא מפורטת בעניין סירובי העברה ומנגנוני בקרה נוספים.</p>
+        </li>
+        <li class="flag-item">
+          <span class="tag tag--critical">סיכון</span>
+          <p>אין הוראות נפרדות מפורטות לגבי מחלוקת שווי במכירת מניות או מנגנוני שוויון בעת יציאה.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 03</span><span>03 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 03 · CONTRACT FACTS ==================== -->
+  <section class="page" aria-labelledby="s-facts">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Contract Facts</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">03</span> · עובדות ההסכם</p>
+      <h2 id="s-facts" class="section-title">עובדות חוזה שחולצו</h2>
+      <p class="lead">הנתונים המרכזיים שחולצו מההסכם באופן דטרמיניסטי.</p>
+
+      <div class="facts">
+        <div class="fact">
+          <div class="f-key">צדדים</div>
+          <div class="f-value">אלפא פתרונות בינה מלאכותית בע״מ</div>
+          <div class="f-sub">מייסד: רועי ישראלי</div>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">מבנה בעלות</div>
+          <ul class="kv-list">
+            <li><span class="kv-k">רועי ישראלי (המייסד)</span><span class="kv-v">60%</span></li>
+            <li><span class="kv-k">אינווסט-טק בע״מ (המשקיע)</span><span class="kv-v">40%</span></li>
+            <li><span class="kv-k">סוגי מניות</span><span class="kv-v">מניות רגילות</span></li>
+            <li><span class="kv-k">הון מונפק</span><span class="kv-v">10,000 מניות</span></li>
+          </ul>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">השקעה</div>
+          <div class="f-value">₪2,000,000</div>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">ממשל תאגידי</div>
+          <ul class="kv-list">
+            <li><span class="kv-k">רוב לקבלת החלטות מהותיות</span><span class="kv-v">75%</span></li>
+            <li><span class="kv-k">דירקטוריון</span><span class="kv-v">3 חברים</span></li>
+            <li><span class="kv-k">זכות מינוי דירקטורים</span><span class="kv-v">כן</span></li>
+            <li><span class="kv-k">עניינים שמורים</span><span class="kv-v">כן</span></li>
+            <li><span class="kv-k">זכויות מידע</span><span class="kv-v">כן</span></li>
+          </ul>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">מחויבויות בעלי מניות</div>
+          <ul class="tick-list">
+            <li>סודיות</li>
+            <li>אי-תחרות</li>
+          </ul>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">תוקף ההסכם / מנגנוני תקופה</div>
+          <div class="f-value">ההסכם הינו מתמשך ואינו קובע תקופת תוקף כללית.</div>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">אירועי יציאה מרכזיים</div>
+          <ul class="tick-list">
+            <li>פירוק החברה</li>
+            <li>מכירת 100% ממניות החברה / אקזיט</li>
+            <li><span class="lang-ltr">IPO</span></li>
+            <li>זכות סירוב ראשונה (<span class="lang-ltr">ROFR</span>)</li>
+            <li>זכות הצטרפות (<span class="lang-ltr">Tag Along</span>)</li>
+            <li>זכות גרירה (<span class="lang-ltr">Drag Along</span>)</li>
+            <li>תקופת חסימה (<span class="lang-ltr">Lock-up</span>)</li>
+          </ul>
+        </div>
+
+        <div class="fact">
+          <div class="f-key">דין וסמכות שיפוט</div>
+          <div class="f-value">לא זוהו סעיפי דין ושיפוט במסמך.</div>
+        </div>
+      </div>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 04</span><span>04 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 04 · ARL RELATIONSHIP MODEL ==================== -->
+  <section class="page page--arl-core" aria-labelledby="s-arl">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>ARL Relationship Model</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">04</span> · מודל היחסים</p>
+      <h2 id="s-arl" class="section-title">מודל היחסים — נכס, יחסים ומחזור חיים</h2>
+      <p class="lead">פירוק מבנה ההסכם למרכיביו: נכס, מערכת יחסים, טרנספורמציה ומחזור חיים.</p>
+
+      <div class="arl-list">
+        <div class="arl-item">
+          <p class="arl-kicker"><span class="lang-ltr">01 · Asset</span></p>
+          <div class="arl-body">
+            <h3>נכס מרכזי</h3>
+            <p>בעלות במניות החברה.</p>
+          </div>
+          <div class="arl-glyph" aria-hidden="true">A</div>
+        </div>
+        <div class="arl-item">
+          <p class="arl-kicker"><span class="lang-ltr">02 · Relationship</span></p>
+          <div class="arl-body">
+            <h3>מערכת יחסים</h3>
+            <p>בעלי מניות.</p>
+          </div>
+          <div class="arl-glyph" aria-hidden="true">R</div>
+        </div>
+        <div class="arl-item">
+          <p class="arl-kicker"><span class="lang-ltr">03 · Transformation</span></p>
+          <div class="arl-body">
+            <h3>טרנספורמציה</h3>
+            <p>הקצאות בעלות מבססות זכויות בעלות במיזם, הנושאות זכויות ממשל וזכויות כלכליות, בכפוף למנגנוני העברה ויציאה.</p>
+          </div>
+          <div class="arl-glyph" aria-hidden="true">T</div>
+        </div>
+        <div class="arl-item">
+          <p class="arl-kicker"><span class="lang-ltr">04 · Lifecycle</span></p>
+          <div class="arl-body">
+            <h3>מחזור חיים</h3>
+            <ul class="dot-list">
+              <li>ייסוד / הקמה</li>
+              <li>תרומת הון</li>
+              <li>הקצאת בעלות / הנפקת מניות</li>
+              <li>ממשל וקבלת החלטות</li>
+              <li>מימון עתידי</li>
+              <li>העברת זכויות בעלות</li>
+              <li>אירוע יציאה</li>
+              <li>סיום</li>
+            </ul>
+          </div>
+          <div class="arl-glyph" aria-hidden="true">L</div>
+        </div>
+      </div>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 05</span><span>05 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 04 · ARL — FUTURE SCENARIOS ==================== -->
+  <section class="page" aria-labelledby="s-arl-future">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>ARL — Future Scenarios</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">04</span> · מודל היחסים</p>
+      <h2 id="s-arl-future" class="section-title">תרחישים עתידיים מרכזיים</h2>
+      <p class="lead">תרחישים עתידיים אפשריים הנגזרים ממבנה הבעלות וממנגנוני היציאה שבהסכם.</p>
+
+      <ul class="dot-list">
+        <li>גיוס הון עתידי</li>
+        <li>דילול</li>
+        <li>יציאת משקיע</li>
+        <li>העברת מניות</li>
+        <li>מכירת החברה</li>
+        <li>פירוק</li>
+        <li>מבוי סתום</li>
+      </ul>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 06</span><span>06 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 05 · CLAUSE REVIEW ==================== -->
+  <section class="page" aria-labelledby="s-clauses">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Clause Review</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">05</span> · סקירת סעיפים</p>
+      <h2 id="s-clauses" class="section-title">סקירת סעיפים</h2>
+      <p class="lead">מיפוי הסעיפים שזוהו בהסכם לפי סטטוס, והצגת הסעיפים הדורשים תשומת לב.</p>
+
+      <div class="chip-row">
+        <span class="tag tag--clean">קיימים · 17</span>
+        <span class="tag tag--moderate">לא ברורים · 1</span>
+        <span class="tag tag--critical">חסרים · 3</span>
+      </div>
+
+      <h3 style="font-size:18px;font-weight:400;margin-bottom:14px;">סעיפים הדורשים תשומת לב</h3>
+      <div class="table-wrap table-wrap--clauses">
+        <table class="clause-table">
+          <caption>סעיפים שסומנו כחסרים או לא ברורים בסקירה.</caption>
+          <thead>
+            <tr><th scope="col">סעיף</th><th scope="col">סטטוס</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>תרומות הצדדים</td><td><span class="tag tag--critical">חסר</span></td></tr>
+            <tr><td>מחויבות מייסדים / בעלי מניות</td><td><span class="tag tag--moderate">לא ברור</span></td></tr>
+            <tr><td>הבשלה ושימור</td><td><span class="tag tag--critical">חסר</span></td></tr>
+            <tr><td>קניין רוחני</td><td><span class="tag tag--critical">חסר</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details class="audit-trail">
+        <summary>הצג את כל הסעיפים שנבדקו</summary>
+        <div class="audit-trail__body">
+          <div class="table-wrap table-wrap--clauses">
+            <table class="clause-table">
+              <caption>פירוט מלא של סקירת הסעיפים.</caption>
+              <thead>
+                <tr><th scope="col">סעיף</th><th scope="col">סטטוס</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>צדדים</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>המיזם / החברה המשותפת</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>מבנה הבעלות</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>תרומות הצדדים</td><td><span class="tag tag--critical">חסר</span></td></tr>
+                <tr><td>מחויבות מייסדים / בעלי מניות</td><td><span class="tag tag--moderate">לא ברור</span></td></tr>
+                <tr><td>הבשלה ושימור</td><td><span class="tag tag--critical">חסר</span></td></tr>
+                <tr><td>קניין רוחני</td><td><span class="tag tag--critical">חסר</span></td></tr>
+                <tr><td><span class="lang-ltr">Governance</span></td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>קבלת החלטות</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>זכויות מידע</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>הגבלות העברה</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>מימון עתידי ודילול</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>מנגנוני יציאה</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>מבוי סתום ויישוב סכסוכים</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>הגבלות התנהגות</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>סיום העסקה</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>אחוזי בעלות</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>הרכב דירקטוריון</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>הגבלות העברת מניות</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>עניינים שמורים</td><td><span class="tag tag--clean">קיים</span></td></tr>
+                <tr><td>זכויות יציאה</td><td><span class="tag tag--clean">קיים</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 07</span><span>07 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 06 · CLIENT EXPOSURE ==================== -->
+  <section class="page" aria-labelledby="s-exposure">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Client Exposure</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">06</span> · חשיפת הלקוח</p>
+      <h2 id="s-exposure" class="section-title">חשיפות מרכזיות ללקוח</h2>
+      <p class="lead">סיכומי סיכון עיקריים ותרחישי חשיפה לפי תחומים.</p>
+
+      <div class="exposures">
+        <article class="exposure is-critical">
+          <p class="e-kicker">01 // Exposure · High</p>
+          <h3>חשיפה — סיום</h3>
+          <p>היעדר מנגנון וסטינג מחייב יכול להביא ליציאה מוקדמת של המייסד ללא השלכות, פוגעת ביציבות החברה ובמימוש הפוטנציאל העסקי.</p>
+          <p class="e-sev"><span class="tag tag--critical">חומרה: גבוהה</span></p>
+        </article>
+        <article class="exposure is-moderate">
+          <p class="e-kicker">02 // Exposure · Medium</p>
+          <h3>חשיפה — כספי</h3>
+          <p>חוסר בהירות בהתחייבויות כספיות של המייסד עלול לגרום למחסור בתקציב החברה ולהקשות על תכנון פיננסי לעתיד.</p>
+          <p class="e-sev"><span class="tag tag--moderate">חומרה: בינונית</span></p>
+        </article>
+        <article class="exposure is-moderate">
+          <p class="e-kicker">03 // Exposure · Medium</p>
+          <h3>חשיפה — אחריות</h3>
+          <p>מגבלות העברת מניות לא מפורטות במקרים של סירוב העברה או מחלוקת שווי עלולות להביא למחלוקת משפטית או לחוסר ודאות לגבי השליטה בחברה.</p>
+          <p class="e-sev"><span class="tag tag--moderate">חומרה: בינונית</span></p>
+        </article>
+        <article class="exposure is-moderate">
+          <p class="e-kicker">04 // Exposure · Medium</p>
+          <h3>חשיפה — תפעולי</h3>
+          <p>ההסדרים במנגנוני קבלת החלטות ותיקים שמורים דורשים רוב גבוה מאוד, מה שעלול להוביל לקושי בניהול שוטף ומבוי סתום בעת חילוקי דעות.</p>
+          <p class="e-sev"><span class="tag tag--moderate">חומרה: בינונית</span></p>
+        </article>
+      </div>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 08</span><span>08 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 07 · RECOMMENDATIONS ==================== -->
+  <section class="page" aria-labelledby="s-recs">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Recommendations</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">07</span> · המלצות לבדיקה</p>
+      <h2 id="s-recs" class="section-title">המלצות לבדיקה</h2>
+      <p class="lead">צעדים מומלצים לחידוד ההסכם והפחתת החשיפה טרם חתימה.</p>
+
+      <div class="rec-item">
+        <div class="rec-num" aria-hidden="true">01</div>
+        <div class="rec-body"><p>להגדיר מנגנון וסטינג מחייב למייסד לצורך ריטנשן ומניעת יציאה מוקדמת ללא השלכות.</p></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num" aria-hidden="true">02</div>
+        <div class="rec-body"><p>להרחיב ולהבהיר תנאי התחייבות הצדדים להקצאת הון ומחויבות כספית של המייסד.</p></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num" aria-hidden="true">03</div>
+        <div class="rec-body"><p>להוסיף הוראות מפורטות לגבי טיפול באי הסכמות על שווי מניות בעת העברת בעלות או יציאה.</p></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num" aria-hidden="true">04</div>
+        <div class="rec-body"><p>להרחיב את הגבלות העברת מניות לרבות מנגנוני סירובי העברה עם פרמטרים מפורטים יותר.</p></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num" aria-hidden="true">05</div>
+        <div class="rec-body"><p>להבהיר ולנסח מנגנון ליישוב סכסוכים כולל פתרון למבוי סתום פרט למנגנוני הגישור והבוררות הקיימים.</p></div>
+      </div>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 09</span><span>09 / 10</span>
+    </div>
+  </section>
+
+  <!-- ==================== 08 · COUNSEL'S NOTES ==================== -->
+  <section class="page" aria-labelledby="s-notes">
+    <div class="running running--head" aria-hidden="true">
+      <span>V 3 . 0 . 4</span><span class="rk-center">LexAudit</span><span>Counsel's Notes</span>
+    </div>
+    <div class="page-body">
+      <p class="eyebrow"><span class="num">08</span> · הערות עורך הדין</p>
+      <h2 id="s-notes" class="section-title">הערות עורך הדין</h2>
+      <p class="lead">הערות לאחר סקירת הדוח.</p>
+
+      <div class="notes-area" role="img" aria-label="שטח ריק להערות בכתב יד"></div>
+    </div>
+    <div class="running running--foot" aria-hidden="true">
+      <span>LexAudit V3</span><span class="rk-center">LA · 10</span><span>10 / 10</span>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
