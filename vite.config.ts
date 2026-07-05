@@ -12,6 +12,7 @@ export default defineConfig({
         accessibility: fileURLToPath(
           new URL('./accessibility/index.html', import.meta.url),
         ),
+        privacy: fileURLToPath(new URL('./privacy/index.html', import.meta.url)),
       },
     },
   },
