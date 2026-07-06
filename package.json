@@ -12,6 +12,7 @@
     "capture:report:screenshots": "node scripts/capture-report-screenshots.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
