@@ -13,6 +13,7 @@ export default defineConfig({
           new URL('./accessibility/index.html', import.meta.url),
         ),
         privacy: fileURLToPath(new URL('./privacy/index.html', import.meta.url)),
+        beta: fileURLToPath(new URL('./beta/index.html', import.meta.url)),
       },
     },
   },
