@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://lexaudit.ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lexaudit.ai/he/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lexaudit.ai/comparison/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexaudit.ai/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lexaudit.ai/accessibility/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lexaudit.ai/reports/lexaudit-report-v3.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
