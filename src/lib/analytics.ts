@@ -25,8 +25,8 @@ function initGA(): void {
   if (!GA_ID) return;
 
   window.dataLayer = window.dataLayer || [];
-  window.gtag = (...args: unknown[]) => {
-    window.dataLayer.push(args);
+  window.gtag = function (..._args: unknown[]): void {
+    window.dataLayer.push(arguments as unknown);
   };
 
   window.gtag("js", new Date());
