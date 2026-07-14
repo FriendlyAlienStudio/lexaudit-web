@@ -1,7 +1,21 @@
 import { useState, type FormEvent } from 'react'
 import { hasAnalysisQuota, limitMessage } from '../../lib/betaAccess'
-import { isAnalysisApiConfigured, submitAnalysisJob } from '../../lib/analysisJob'
+import {
+  isAnalysisApiConfigured,
+  submitAnalysisJob,
+  type AnalysisJobResult,
+} from '../../lib/analysisJob'
 import { useAuth } from '../../auth/authContext'
+
+type CompletedAnalysis = Extract<AnalysisJobResult, { status: 'success' }>
+
+function formatContractType(value: string): string {
+  return value.replace(/_/g, ' ')
+}
+
+function formatRiskLevel(value: string): string {
+  return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
+}
 
 export function BetaAppPage() {
   const { profile, refreshProfile, signOut } = useAuth()
@@ -9,8 +23,11 @@ export function BetaAppPage() {
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [report, setReport] = useState<CompletedAnalysis | null>(null)
 
-  if (!profile?.allowed || !profile.profile_complete) return null
+  if (!profile?.allowed || !profile.profile_complete) {
+    return null
+  }
 
   const activeProfile = profile
   const atLimit = !hasAnalysisQuota(activeProfile)
@@ -20,6 +37,7 @@ export function BetaAppPage() {
     event.preventDefault()
     setError(null)
     setMessage(null)
+    setReport(null)
 
     if (!file) {
       setError('Select a contract file to analyze.')
@@ -35,34 +53,35 @@ export function BetaAppPage() {
     try {
       const result = await submitAnalysisJob(file)
 
-      if (result.status === 'accepted') {
+      if (result.status === 'success') {
         await refreshProfile()
-        setMessage(
-          `Analysis accepted for "${result.fileName}" (ref ${result.jobId}). Usage: ${result.profile.analyses_used} of ${result.profile.analyses_limit}.`,
-        )
+        setReport(result)
+        setMessage(`Analysis complete for "${result.fileName}".`)
         setFile(null)
         return
       }
 
       if (result.status === 'not_configured') {
-        // Quota is not consumed — backend not wired yet.
         setMessage(
-          `"${result.fileName}" is ready to analyze. The analysis service is not connected yet — no quota was used. Remaining analyses: ${activeProfile.analyses_remaining}.`,
+          `"${result.fileName}" is ready to analyze. The analysis backend is not configured — no quota was used. Remaining analyses: ${activeProfile.analyses_remaining}.`,
         )
         setFile(null)
         return
       }
 
-      setError('Unable to start analysis. Please try again.')
+      setError(
+        result.detail ??
+          'Unable to complete analysis. Please try again or contact support if the problem continues.',
+      )
     } catch {
-      setError('Unable to start analysis. Please try again.')
+      setError('Unable to complete analysis. Please try again.')
     } finally {
       setBusy(false)
     }
   }
 
   return (
-    <div className="beta-card">
+    <div className="beta-card beta-card--wide">
       <div className="beta-app-head">
         <div>
           <p className="beta-eyebrow">Private Beta</p>
@@ -82,8 +101,8 @@ export function BetaAppPage() {
 
       {!apiConfigured && (
         <p className="beta-hint">
-          Analysis API is not configured yet. You can select a file to preview the flow — quota will
-          not be used until a job is accepted by the backend.
+          Analysis backend is not configured yet. You can select a file to preview the flow — quota
+          will not be used until analysis succeeds.
         </p>
       )}
 
@@ -101,23 +120,83 @@ export function BetaAppPage() {
           id="contract"
           className="beta-input beta-input-file"
           type="file"
-          accept=".pdf,.doc,.docx,.txt"
-          onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+          accept=".pdf,.docx,.txt"
+          onChange={(e) => {
+            setFile(e.target.files?.[0] ?? null)
+            setError(null)
+            setMessage(null)
+          }}
           disabled={busy || atLimit}
         />
-        <p className="beta-hint">PDF, Word, or plain text. Your document stays confidential.</p>
+        {file && (
+          <p className="beta-selected-file">
+            Selected: <span dir="ltr">{file.name}</span>
+          </p>
+        )}
+        <p className="beta-hint">PDF, Word (.docx), or plain text. Your document stays confidential.</p>
 
-        {error && <p className="beta-error" role="alert">{error}</p>}
-        {message && <p className="beta-success" role="status">{message}</p>}
+        {error && (
+          <p className="beta-error" role="alert">
+            {error}
+          </p>
+        )}
+        {message && (
+          <p className="beta-success" role="status">
+            {message}
+          </p>
+        )}
 
         <button
           type="submit"
           className="beta-btn beta-btn-primary"
           disabled={busy || atLimit || !file}
         >
-          {busy ? 'Starting…' : 'Start analysis'}
+          {busy ? 'Analyzing…' : 'Start analysis'}
         </button>
       </form>
+
+      {busy && (
+        <p className="beta-loading" role="status">
+          Reviewing contract and preparing your report. This usually takes under a minute.
+        </p>
+      )}
+
+      {report && (
+        <section className="beta-report" aria-label="Analysis report">
+          <div className="beta-report-summary">
+            <div>
+              <p className="beta-label">Contract type</p>
+              <p className="beta-report-value">{formatContractType(report.contractType)}</p>
+            </div>
+            <div>
+              <p className="beta-label">Risk level</p>
+              <p className="beta-report-value">{formatRiskLevel(report.riskLevel)}</p>
+            </div>
+            <div>
+              <p className="beta-label">Remaining analyses</p>
+              <p className="beta-report-value">{report.profile.analyses_remaining}</p>
+            </div>
+            <div className="beta-report-actions">
+              <a
+                className="beta-btn beta-btn-secondary"
+                href={report.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open PDF report
+              </a>
+            </div>
+          </div>
+
+          <iframe
+            className="beta-report-frame"
+            title={`Analysis report for ${report.fileName}`}
+            srcDoc={report.html}
+            sandbox=""
+            referrerPolicy="no-referrer"
+          />
+        </section>
+      )}
     </div>
   )
 }

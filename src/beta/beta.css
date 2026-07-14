@@ -94,6 +94,10 @@ code {
   max-width: 480px;
 }
 
+.beta-card--wide {
+  max-width: 960px;
+}
+
 .beta-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -165,6 +169,12 @@ code {
   padding: 12px 14px;
 }
 
+.beta-selected-file {
+  font-size: 14px;
+  color: var(--on-surface);
+  font-weight: 400;
+}
+
 .beta-hint {
   font-size: 13px;
   color: var(--on-surface-variant);
@@ -230,6 +240,13 @@ code {
   border-color: var(--primary);
 }
 
+.beta-btn-primary:disabled {
+  background: var(--border-subtle);
+  color: var(--on-surface-variant);
+  border-color: var(--border-subtle);
+  opacity: 1;
+}
+
 .beta-btn-secondary {
   background: transparent;
   color: var(--on-surface);
@@ -259,6 +276,48 @@ code {
   color: var(--on-surface);
 }
 
+.beta-loading {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  font-weight: 300;
+}
+
+.beta-report {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.beta-report-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.beta-report-value {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-top: 6px;
+}
+
+.beta-report-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.beta-report-frame {
+  width: 100%;
+  min-height: 720px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface);
+  border-radius: 2px;
+}
+
 @media (max-width: 560px) {
   .beta-card {
     padding: 28px 22px;
@@ -266,5 +325,13 @@ code {
 
   .beta-title {
     font-size: 26px;
+  }
+
+  .beta-report-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .beta-report-actions {
+    justify-content: flex-start;
   }
 }

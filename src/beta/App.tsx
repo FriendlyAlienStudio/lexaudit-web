@@ -33,7 +33,9 @@ export default function BetaApp() {
   const { configured, loading, session, profile, profileLoading, signOut } = useAuth()
 
   if (!configured) return <ConfigMissing />
-  if (loading || (session && profileLoading && !profile)) return <LoadingState />
+
+  const awaitingInitialProfile = Boolean(session && !profile && profileLoading)
+  if (loading || awaitingInitialProfile) return <LoadingState />
 
   if (!session) return <LoginPage />
 

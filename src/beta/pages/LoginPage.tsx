@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { normalizePhone } from '../../lib/phone'
+import { isValidPhone, normalizePhone } from '../../lib/phone'
 import { getSupabase } from '../../lib/supabase'
 import { otpSendErrorMessage, otpVerifyErrorMessage } from '../../lib/authErrors'
 import { useAuth } from '../../auth/authContext'
@@ -14,6 +14,7 @@ export function LoginPage() {
   const [normalizedPhone, setNormalizedPhone] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const phoneValid = isValidPhone(phone)
 
   async function handleSendOtp(event: FormEvent) {
     event.preventDefault()
@@ -75,9 +76,9 @@ export function LoginPage() {
   return (
     <div className="beta-card beta-card--narrow">
       <p className="beta-eyebrow">Private Beta</p>
-      <h1 className="beta-title">Sign in with your phone</h1>
+      <h1 className="beta-title">Sign in to LexAudit</h1>
       <p className="beta-lead">
-        LexAudit is in private beta. Enter the mobile number approved for your account.
+        Access to the private beta is by invitation only. Enter the mobile number associated with your account.
       </p>
 
       {step === 'phone' ? (
@@ -91,7 +92,7 @@ export function LoginPage() {
             type="tel"
             autoComplete="tel"
             inputMode="tel"
-            placeholder="+972 54 456 1132"
+            placeholder="+972 XX XXX XXXX"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             disabled={busy}
@@ -99,7 +100,11 @@ export function LoginPage() {
           />
           <p className="beta-hint">Include country code. Israeli numbers may start with +972.</p>
           {error && <p className="beta-error" role="alert">{error}</p>}
-          <button type="submit" className="beta-btn beta-btn-primary beta-btn-full" disabled={busy}>
+          <button
+            type="submit"
+            className="beta-btn beta-btn-primary beta-btn-full"
+            disabled={busy || !phoneValid}
+          >
             {busy ? 'Sending…' : 'Send verification code'}
           </button>
         </form>

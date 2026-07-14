@@ -26,3 +26,18 @@ export function formatPhoneHint(raw: string): string {
   const normalized = normalizePhone(raw)
   return normalized ?? raw.trim()
 }
+
+/** True when input normalizes to a complete E.164 or Israeli mobile number. */
+export function isValidPhone(raw: string): boolean {
+  const e164 = normalizePhone(raw)
+  if (!e164?.startsWith('+')) return false
+
+  const digits = e164.slice(1)
+  if (!/^\d+$/.test(digits) || digits.length > 15) return false
+
+  if (digits.startsWith('972')) {
+    return digits.length === 12
+  }
+
+  return digits.length >= 10
+}
