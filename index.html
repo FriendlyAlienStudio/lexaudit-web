@@ -368,6 +368,7 @@
   }
 </style>
 </head>
+<script type="module" src="/src/analytics-entry.ts"></script>
 <body>
 
 <a href="#top" class="skip-link">Skip to main content</a>
@@ -385,7 +386,7 @@
         <a href="/he/" lang="he">עברית</a>
       </div>
       <div class="nav-cta">
-        <a href="#demo" class="btn btn-primary">Request a Demo</a>
+        <a href="#demo" class="btn btn-primary" data-analytics-event="request_demo" data-analytics-location="nav">Request a Demo</a>
       </div>
     </nav>
   </div>
@@ -401,8 +402,8 @@
       <p class="sub">LexAudit reviews contracts for lawyers. It extracts key legal facts, identifies meaningful risks, and produces a structured review report.</p>
       <p class="sub-note">LexAudit was designed to augment legal judgment—not automate it.</p>
       <div class="ctas">
-        <a href="#demo" class="btn btn-primary">Request a Demo</a>
-        <a href="/reports/lexaudit-report-v3.html" class="text-link">View Sample Report</a>
+        <a href="#demo" class="btn btn-primary" data-analytics-event="request_demo" data-analytics-location="hero">Request a Demo</a>
+        <a href="/reports/lexaudit-report-v3.html" class="text-link" data-analytics-event="view_sample_report" data-analytics-location="hero">View Sample Report</a>
       </div>
       <div class="doc-strip">
         <div>Prepared For<span>Counsel &amp; Legal Teams</span></div>
@@ -539,7 +540,7 @@
             decoding="async">
         </div>
         <div class="sample-cta">
-          <a href="/reports/lexaudit-report-v3.pdf" class="text-link" target="_blank" rel="noopener">View Sample Report</a>
+          <a href="/reports/lexaudit-report-v3.pdf" class="text-link" target="_blank" rel="noopener" data-analytics-event="download_sample_report" data-analytics-location="sample">View Sample Report</a>
         </div>
       </div>
     </div>
@@ -563,7 +564,7 @@
       <p class="reveal">"LexAudit was designed to augment legal judgment—not automate it."</p>
       <div class="attr">— LexAudit</div>
       <div class="ctas">
-        <a href="mailto:hello@lexaudit.ai" class="btn btn-primary">Request a Demo</a>
+        <a href="mailto:hello@lexaudit.ai" class="btn btn-primary" data-analytics-event="request_demo" data-analytics-location="closing">Request a Demo</a>
       </div>
     </div>
   </section>

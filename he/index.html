@@ -562,6 +562,7 @@
   }
 </style>
 </head>
+<script type="module" src="/src/analytics-entry.ts"></script>
 <body>
 
 <a href="#top" class="skip-link">דלג לתוכן המרכזי</a>
@@ -580,7 +581,7 @@
         <a href="/" lang="en">English</a>
       </div>
       <div class="nav-cta" dir="rtl">
-        <a href="#demo" class="btn btn-primary">בקשת הדגמה</a>
+        <a href="#demo" class="btn btn-primary" data-analytics-event="request_demo" data-analytics-location="nav">בקשת הדגמה</a>
       </div>
     </nav>
   </div>
@@ -595,8 +596,8 @@
       <p class="sub">בעת בחינת הסכם חדש, השאלה הראשונה היא לא אילו סיכונים לסמן — אלא <strong>כיצד פועל ההסכם</strong>, איזו <strong>מערכת יחסים משפטית</strong> הוא יוצר, וכיצד מוקצים זכויות, חובות ואחריות בין הצדדים. LexAudit מסייע בבדיקת חוזים ובניתוח הסכמים באופן המשקף את דרך החשיבה של עורכי דין מסחריים.</p>
       <p class="sub-note">הכלי נועד לחזק את שיקול הדעת המשפטי — לא להחליף אותו.</p>
       <div class="ctas">
-        <a href="#demo" class="btn btn-primary">בקשת הדגמה</a>
-        <a href="/reports/lexaudit-report-v3.html" class="text-link">צפייה בדוח לדוגמה</a>
+        <a href="#demo" class="btn btn-primary" data-analytics-event="request_demo" data-analytics-location="hero">בקשת הדגמה</a>
+        <a href="/reports/lexaudit-report-v3.html" class="text-link" data-analytics-event="view_sample_report" data-analytics-location="hero">צפייה בדוח לדוגמה</a>
       </div>
       <div class="doc-strip" aria-label="מאפייני הדוח">
         <div>מיועד ל<span>עורכי דין וצוותים משפטיים</span></div>
@@ -761,8 +762,8 @@
             decoding="async">
         </div>
         <div class="sample-cta">
-          <a href="/reports/lexaudit-report-v3.html" class="btn btn-primary">פתיחת הדוח המלא</a>
-          <a href="/reports/lexaudit-report-v3.pdf" class="text-link" target="_blank" rel="noopener">הורדת PDF</a>
+          <a href="/reports/lexaudit-report-v3.html" class="btn btn-primary" data-analytics-event="view_sample_report" data-analytics-location="sample">פתיחת הדוח המלא</a>
+          <a href="/reports/lexaudit-report-v3.pdf" class="text-link" target="_blank" rel="noopener" data-analytics-event="download_sample_report" data-analytics-location="sample">הורדת PDF</a>
         </div>
       </div>
     </div>
@@ -816,7 +817,7 @@
         <p>ההחלטות המקצועיות, האסטרטגיה המשפטית והמו״מ נשארים בידי עורך הדין.</p>
       </div>
       <div class="ctas reveal">
-        <a href="mailto:hello@lexaudit.ai" class="btn btn-primary">בקשת הדגמה</a>
+        <a href="mailto:hello@lexaudit.ai" class="btn btn-primary" data-analytics-event="request_demo" data-analytics-location="closing">בקשת הדגמה</a>
       </div>
     </div>
   </section>
