@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שאלות נפוצות — LexAudit לבדיקת חוזים לעורכי דין</title>
+<meta name="description" content="תשובות לעורכי דין, משרדי עורכי דין וצוותים משפטיים בחברות: איך LexAudit בודק הסכמים, מה כולל הדוח, אילו סוגי הסכמים נתמכים, פרטיות וגישה לבטא.">
+<link rel="canonical" href="https://lexaudit.ai/he/faq/">
+<link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/faq/">
+<link rel="alternate" hreflang="en" href="https://lexaudit.ai/faq/">
+<link rel="alternate" hreflang="x-default" href="https://lexaudit.ai/faq/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@200;300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "מה זה LexAudit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit הוא כלי לבדיקת חוזים וניתוח הסכמים לעורכי דין. המערכת מחלצת עובדות חוזיות, משחזרת מערכת יחסים משפטית, מדרגת סוגיות לפי מהותיות, ומפיקה דוח סקירה מקצועי."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם LexAudit מחליף עורך דין?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא. LexAudit מארגן את שלב ההבנה הראשונית: עובדות, מבנה ההתקשרות, סקירת סעיפים לפי סוג ההסכם, וסוגיות מדורגות. השיקול המקצועי, האסטרטגיה והמו״מ נשארים בידי עורך הדין."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם LexAudit מהווה ייעוץ משפטי?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא. הדוח נועד לסקירה ראשונית; שיקול הדעת המשפטי, האסטרטגיה והמשא ומתן נותרים בידי עורך הדין."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "למי מיועד LexAudit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לעורכי דין, משרדי עורכי דין וצוותים משפטיים בחברות בישראל שבוחנים הסכמים כחלק מהשגרה."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מתי LexAudit שימושי בתהליך סקירה רגיל?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כשמגיע הסכם חדש והשאלה הראשונה היא איך העסקה עובדת — לפני דירוג סיכונים."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "איך LexAudit בודק חוזה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "תהליך קבוע: חילוץ לפי כללים, סיווג סוג ההסכם עם מסגרת בחינה המותאמת לסוג ההסכם, מודל יחסים (ARL), דירוג לפי מהותיות, ודוח מובנה בעברית."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה זה \"עובדות לפני ניתוח\" בפועל?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "עובדות שחולצו מופיעות בדוח בנפרד מסעיפים מפרשיים. עורך הדין יכול לאמת עובדות לפני שמסתמך על הניתוח."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה זה ARL (נכס · יחסים · מחזור חיים)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "מסגרת להבנת מה ההסכם מסדיר ואיך ההתקשרות מתפתחת. המטרה: הבנת מערכת היחסים לפני הערכת הסיכונים."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "במה LexAudit שונה מסקירת חוזה עם עוזר AI כללי?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "עוזר AI כללי בנוי לשיחה. LexAudit הוא תהליך סקירה מובנה: בחינת מערכת היחסים תחילה, סוגיות המדורגות לפי מהותיות, ודוח מקצועי כתוצר."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה מקבלים בסוף הבדיקה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "דוח סקירה מקצועי בעברית: תקציר מנהלים, עובדות, ניתוח ARL, סקירת סעיפים, והמלצות."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "באילו סוגי הסכמים אפשר להשתמש?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "חוזים מסחריים, NDA, העסקה, שכירות, מכר, בעלות משותפת, מימון, זיכיון והפצה — עם מסגרת בחינה המותאמת לסוג ההסכם."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר להעלות PDF ו-Word?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. TXT, DOCX ו-PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם החוזים שמועלים נשמרים בפרטיות?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. חוזי לקוחות אינם משמשים לאימון מודלים ציבוריים."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה האחריות המקצועית שלי?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit הוא עזר לסקירה. האחריות לייצוג, חסיון וכל החלטה מקצועית נשארת אצלכם."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "איך מקבלים גישה היום?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit בבטא פרטית. בקשת הדגמה: hello@lexaudit.ai. משתמשים מאושרים: /beta/."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --surface: #ffffff;
+    --surface-alt: #f9f9f9;
+    --surface-warm: #f7f5f0;
+    --on-surface: #1a1c1c;
+    --on-surface-variant: #5e5e5e;
+    --outline: #6a6d6d;
+    --border-subtle: #e5e5e5;
+    --primary: #000000;
+    --on-primary: #ffffff;
+    --accent-gold: #8f7850;
+    --page-margin: 64px;
+    --container-max: 820px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg{ display:block; max-width:100%; }
+  a{ color: inherit; text-decoration: none; }
+  a.text-link{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--on-surface);
+    padding-bottom: 2px;
+  }
+  a.text-link:hover{ color: var(--on-surface-variant); border-color: var(--on-surface-variant); }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 var(--page-margin); }
+  .doc-wrap{ max-width: var(--container-max); }
+  h1, h2, h3{
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    color: var(--on-surface);
+  }
+  .skip-link{
+    position: absolute; right: 16px; top: -80px; z-index: 100;
+    background: var(--primary); color: var(--on-primary);
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 0.06em; padding: 12px 20px; transition: top 160ms ease;
+  }
+  .skip-link:focus{ top: 12px; }
+  header{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(6px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  nav{ display:flex; align-items:center; justify-content: space-between; height: 84px; }
+  .logo-mark{ width: 168px; height: auto; }
+  .nav-links{ display:flex; align-items:center; gap: 36px; }
+  .nav-links a{
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--on-surface-variant);
+    border-bottom: 1px solid transparent;
+    transition: color 160ms ease, border-color 160ms ease;
+  }
+  .nav-links a:hover, .nav-links a[aria-current="page"]{
+    color: var(--on-surface); border-color: var(--on-surface);
+  }
+  .nav-cta{ display:flex; align-items:center; gap: 12px; }
+  .nav-links-desktop{ display:flex; }
+  .btn{
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 46px; padding: 0 26px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    border-radius: 0; cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease;
+    white-space: nowrap;
+    background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary);
+  }
+  .btn:hover{ background: #2a2a2a; }
+  .doc{ padding: 88px 0 72px; }
+  .doc .eyebrow{
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent-gold); margin-bottom: 24px;
+  }
+  .doc h1{ font-size: 42px; line-height: 1.28; margin-bottom: 20px; }
+  .doc .lead{
+    font-family: 'IBM Plex Serif', serif; font-weight: 300;
+    font-size: 20px; line-height: 1.6; color: var(--on-surface-variant);
+    margin-bottom: 28px;
+  }
+  .doc .hero-links{
+    display:flex; flex-wrap: wrap; gap: 20px; align-items: center;
+    margin-bottom: 56px; padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .faq-section{ margin-bottom: 56px; }
+  .faq-section > h2{
+    font-size: 13px; font-family: 'JetBrains Mono', monospace;
+    font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--on-surface-variant); margin-bottom: 28px;
+  }
+  .faq-item{
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .faq-item:first-of-type{ border-top: 1px solid var(--border-subtle); }
+  .faq-item h3{
+    font-size: 22px; line-height: 1.4; margin-bottom: 14px;
+  }
+  .faq-item p, .faq-item li{
+    color: var(--on-surface-variant); font-weight: 300;
+    margin-bottom: 12px;
+  }
+  .faq-item p:last-child, .faq-item ul:last-child{ margin-bottom: 0; }
+  .faq-item ul{ padding-right: 20px; }
+  .faq-item strong{ color: var(--on-surface); font-weight: 500; }
+  .compare-table{
+    width: 100%; border-collapse: collapse; margin: 20px 0;
+    font-size: 14px;
+  }
+  .compare-table th, .compare-table td{
+    border: 1px solid var(--border-subtle);
+    padding: 12px 14px; vertical-align: top; text-align: right;
+  }
+  .compare-table thead th{
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--surface-alt);
+  }
+  .compare-table tbody th{ font-weight: 500; color: var(--on-surface); width: 22%; }
+  .closing-cta{
+    padding: 48px 0 72px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .closing-cta p{
+    font-family: 'IBM Plex Serif', serif; font-weight: 300;
+    font-size: 20px; line-height: 1.6; margin-bottom: 24px;
+  }
+  .closing-cta .links{ display:flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+  footer{ padding: 56px 0 48px; border-top: 1px solid var(--border-subtle); }
+  .footer-top{ display:flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; }
+  .footer-logo{ width: 148px; height: auto; }
+  .footer-links{ display:flex; gap: 36px; flex-wrap: wrap; }
+  .footer-links a{
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-surface-variant);
+  }
+  .footer-links a:hover{ color: var(--on-surface); }
+  .footer-bottom{ display:flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 12px; }
+  .footer-bottom span{ font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--outline); }
+  @media (max-width: 860px){
+    :root{ --page-margin: 24px; }
+    .nav-links-desktop{ display:none; }
+    .doc{ padding: 56px 0 48px; }
+    .doc h1{ font-size: 30px; }
+    .doc .lead{ font-size: 18px; }
+    .compare-table{ font-size: 13px; display: block; overflow-x: auto; }
+    .footer-top{ flex-direction: column; }
+  }
+</style>
+</head>
+<script type="module" src="/src/analytics-entry.ts"></script>
+<body>
+
+<a href="#main" class="skip-link">דלג לתוכן המרכזי</a>
+
+<header dir="ltr">
+  <div class="wrap">
+    <nav aria-label="ניווט ראשי">
+      <a href="/he/" aria-label="LexAudit">
+        <img src="/logo.svg" alt="LexAudit" class="logo-mark" width="165" height="80">
+      </a>
+      <div class="nav-links nav-links-desktop" dir="rtl">
+        <a href="/he/#methodology">מתודולוגיה</a>
+        <a href="/he/#sample">דוח לדוגמה</a>
+        <a href="/comparison/" lang="en">Comparison</a>
+        <a href="/he/faq/" aria-current="page">שאלות נפוצות</a>
+        <a href="/faq/" lang="en">English</a>
+      </div>
+      <div class="nav-cta" dir="rtl">
+        <a href="/he/#demo" class="btn" data-analytics-event="request_demo" data-analytics-location="nav">בקשת הדגמה</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc" tabindex="-1">
+  <div class="wrap doc-wrap">
+    <p class="eyebrow">ידע מוצר</p>
+    <h1>שאלות נפוצות</h1>
+    <p class="lead">LexAudit הוא כלי לבדיקת חוזים לעורכי דין, משרדי עורכי דין וצוותים משפטיים בחברות בישראל. התוצר הוא <strong>דוח סקירה מקצועי בעברית</strong> — לא תמליל שיחה.</p>
+    <div class="hero-links">
+      <a href="/reports/lexaudit-report-v3.html" class="text-link">דוח לדוגמה</a>
+      <a href="mailto:hello@lexaudit.ai" class="text-link">בקשת הדגמה</a>
+    </div>
+
+    <section class="faq-section" aria-labelledby="sec-a">
+      <h2 id="sec-a">מה זה LexAudit</h2>
+
+      <article class="faq-item">
+        <h3>מה זה LexAudit?</h3>
+        <p>LexAudit הוא כלי ל<strong>בדיקת חוזים</strong> ו<strong>ניתוח הסכמים</strong> לעורכי דין. מעלים הסכם; המערכת מחלצת עובדות חוזיות שניתן לאמת, משחזרת כיצד ההסכם פועל כ<strong>מערכת יחסים משפטית</strong>, מדרגת סוגיות לפי מהותיות, ומפיקה <strong>דוח סקירה מקצועי</strong> בפורמט של מוצר עבודה משפטי.</p>
+        <p>הכלי נועד <strong>לחזק את שיקול הדעת המשפטי — לא להחליף אותו</strong>.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>האם LexAudit מחליף עורך דין?</h3>
+        <p>לא. LexAudit מארגן את שלב ההבנה הראשונית: עובדות, מבנה ההתקשרות, סקירת סעיפים לפי סוג ההסכם, וסוגיות מדורגות לפי משמעות. השיקול המקצועי, האסטרטגיה מול הלקוח, המו״מ והייעוץ הסופי נשארים בידי עורך הדין.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>האם LexAudit מהווה ייעוץ משפטי?</h3>
+        <p>לא. הדוח נועד לסקירה ראשונית; שיקול הדעת המשפטי, האסטרטגיה והמשא ומתן נותרים בידי עורך הדין.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-b">
+      <h2 id="sec-b">למי מיועד</h2>
+
+      <article class="faq-item">
+        <h3>למי מיועד LexAudit?</h3>
+        <p>ל<strong>עורכי דין, משרדי עורכי דין וצוותים משפטיים בחברות</strong> בישראל שבוחנים הסכמים כחלק מהשגרה — במיוחד כשצריך מעבר ראשון מסודר לפני העמקה, תיאום פנימי או הצגה ללקוח.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>מתי LexAudit שימושי בתהליך סקירה רגיל?</h3>
+        <p>כשמגיע הסכם חדש והשאלה הראשונה היא <strong>איך העסקה עובדת</strong> — מי הצדדים, מה כל צד נותן, אילו מנגנונים משפטיים מחזיקים את ההתקשרות, ומה עלול להשפיע מהותית על הלקוח — לפני דירוג סיכונים. LexAudit בנוי לסקירה ראשונית חוזרת, לא לאישור סופי.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-c">
+      <h2 id="sec-c">איך LexAudit עובד</h2>
+
+      <article class="faq-item">
+        <h3>איך LexAudit בודק חוזה?</h3>
+        <p>תהליך קבוע:</p>
+        <ul>
+          <li><strong>חילוץ לפי כללים קבועים</strong> — עובדות שניתן לאמת נחלצות בכללים, לפני שהניתוח המפרשי מתחיל.</li>
+          <li><strong>סיווג סוג ההסכם</strong> — זיהוי קטגוריה ו<strong>מסגרת בחינה המותאמת לסוג ההסכם</strong> (למשל העסקה מול NDA מול בעלי מניות).</li>
+          <li><strong>מודל יחסים (ARL)</strong> — נכס · יחסים · מחזור חיים · תרחישים עתידיים — לא רק רשימת סעיפים שטוחה.</li>
+          <li><strong>דירוג לפי מהותיות</strong> — סוגיות מדורגות לפי משמעות משפטית לפני הניסוח.</li>
+          <li><strong>דוח מובנה</strong> — מזכר מקצועי בעברית (HTML ו-PDF).</li>
+        </ul>
+        <p>פרשנות לא קודמת לעובדות מאומתות. הדוח מעביר ניתוח שכבר עבר מבנה.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>מה זה "עובדות לפני ניתוח" בפועל?</h3>
+        <p>עובדות שחולצו — צדדים, תקופה, תמורה, סיום, סמכות שיפוט, ומיפוי לפי קטגוריה — מופיעות בדוח <strong>בנפרד</strong> מסעיפים מפרשיים כמו חשיפות ללקוח, סקירת סעיפים והמלצות. עורך הדין יכול לאמת עובדות לפני שמסתמך על הניתוח שבנוי עליהן.</p>
+        <p>LexAudit לא מבקש מהמודל "להמציא" עובדות בסיסיות מתוך זיכרון כללי.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>מה זה ARL (נכס · יחסים · מחזור חיים)?</h3>
+        <p>מסגרת להבנת <strong>מה ההסכם מסדיר</strong> ו<strong>איך ההתקשרות מתפתחת</strong>:</p>
+        <ul>
+          <li><strong>נכס</strong> — האובייקט הכלכלי או המשפטי במרכז העסקה</li>
+          <li><strong>יחסים</strong> — מערכת היחסים המשפטית והמסחרית בין הצדדים</li>
+          <li><strong>מחזור חיים</strong> — שלבי ההתקשרות (כניסה, תפעול, הפרה, יציאה)</li>
+          <li><strong>תרחישים עתידיים</strong> — אירועים שהחוזה צופה ומקצה להם סיכון</li>
+        </ul>
+        <p>סקירת הסעיפים נשענת על מבנה זה. המטרה: <strong>הבנת מערכת היחסים לפני הערכת הסיכונים</strong>, לא רשימת סעיפים גנרית לכל הסכם.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>במה LexAudit שונה מסקירת חוזה עם עוזר AI כללי?</h3>
+        <p>עוזר AI כללי (ChatGPT, Claude וכו') בנוי לשיחה: מדביקים טקסט, כותבים הנחיה, ומקבלים תשובה אחת בחלון שיחה. LexAudit בנוי כ<strong>תהליך סקירה קבוע</strong> עם תוצר מוגדר:</p>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">עוזר AI כללי</th>
+              <th scope="col">LexAudit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">תהליך</th>
+              <td>שאלה ותשובה לפי הצורך</td>
+              <td>רצף סקירה קבוע בשלבים</td>
+            </tr>
+            <tr>
+              <th scope="row">קלט</th>
+              <td>הזנת הטקסט ומתן הנחיות</td>
+              <td>העלאת TXT, DOCX או PDF</td>
+            </tr>
+            <tr>
+              <th scope="row">עובדות מול ניתוח</th>
+              <td>לרוב משולבים בתשובה אחת</td>
+              <td>עובדות נחלצות תחילה, מוצגות בחלקים נפרדים בדוח</td>
+            </tr>
+            <tr>
+              <th scope="row">מסגרת סקירה</th>
+              <td>תלוי בניסוח ההנחיה</td>
+              <td>מסגרת בחינה המותאמת לסוג ההסכם</td>
+            </tr>
+            <tr>
+              <th scope="row">מודל ניתוח</th>
+              <td>לעיתים סיכום סעיף-סעיף</td>
+              <td>בחינת מערכת היחסים תחילה (ARL) לפני כתיבת סיכונים</td>
+            </tr>
+            <tr>
+              <th scope="row">עדיפויות</th>
+              <td>לעיתים רשימה שטוחה</td>
+              <td>סוגיות המדורגות לפי מהותיות</td>
+            </tr>
+            <tr>
+              <th scope="row">תוצר</th>
+              <td>הודעת צ'אט</td>
+              <td>מזכר סקירה מקצועי בעברית</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>LexAudit הוא לא "הנחיה טובה יותר" לכלי שיחה. זה <strong>תהליך סקירה מובנה שהתוצר שלו הוא דוח מקצועי</strong>.</p>
+        <p>להשוואה מלאה מול סקירה מסורתית ו-AI גנרי: <a href="/comparison/">מסגרת ההשוואה</a>.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-d">
+      <h2 id="sec-d">מה מקבלים</h2>
+
+      <article class="faq-item">
+        <h3>מה מקבלים בסוף הבדיקה?</h3>
+        <p><strong>דוח סקירה מקצועי בעברית</strong>, הכולל בדרך כלל:</p>
+        <ul>
+          <li>תקציר מנהלים</li>
+          <li>נקודות מרכזיות לבדיקה מקצועית</li>
+          <li>חשיפות מרכזיות ללקוח (במידת הרלוונטיות)</li>
+          <li>עובדות חוזה שחולצו</li>
+          <li>ניתוח ARL — מבנה ההסכם ומערכת היחסים</li>
+          <li>סקירת סעיפים מול מסגרת הבחינה של הקטגוריה (כולל סעיפים חסרים או לא ברורים)</li>
+          <li>המלצות לבדיקה ולפעולה</li>
+          <li>שטח להערות עורך הדין</li>
+        </ul>
+        <p>ראו <a href="/reports/lexaudit-report-v3.html">דוח לדוגמה</a> למבנה המלא.</p>
+        <p>הדוח מיועד לעיון פנימי, לתיק העניין ולתמצות מול לקוח — לא כתמליל שיחה.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-e">
+      <h2 id="sec-e">סוגי הסכמים (כיסוי בטא)</h2>
+
+      <article class="faq-item">
+        <h3>באילו סוגי הסכמים אפשר להשתמש?</h3>
+        <p>LexAudit מסווג הסכמים אוטומטית ומפעיל <strong>מסגרת בחינה המותאמת לסוג ההסכם</strong>. בבטא הפרטית נתמכים בין היתר:</p>
+        <ul>
+          <li><strong>חוזים מסחריים והסכמי שירותים</strong> — כולל תת-סוגים כמו פיתוח תוכנה, שיווק, רכש/ספק, והפקת אירועים (כשמזוהים במסמך)</li>
+          <li><strong>הסכמי סודיות (NDA)</strong></li>
+          <li><strong>הסכמי העסקה</strong></li>
+          <li><strong>חוזי שכירות</strong> (מגורים ומסחרית)</li>
+          <li><strong>הסכמי מכר</strong> (נדל״ן)</li>
+          <li><strong>הסכמי בעלות משותפת</strong> — בעלי מניות, מייסדים, מיזם משותף, ועסק משפחתי</li>
+          <li><strong>הסכמי מימון</strong> — כולל הסכמי השקעה מסוג SAFE</li>
+          <li><strong>זיכיון (Franchise)</strong></li>
+          <li><strong>הפצה (Distribution)</strong></li>
+        </ul>
+        <p>הכיסוי מתרחב במהלך הבטא, עם חיזוק מול דגימות אמיתיות מעורכי דין במסגרת הפיילוט. אם אתם עובדים בעיקר על סוג הסכם אחד — ציינו זאת בבקשת גישה.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>האם אפשר להעלות PDF ו-Word?</h3>
+        <p>כן. <strong>TXT, DOCX ו-PDF</strong>. איכות החילוץ תלויה במסמך: שכבת טקסט נקייה נותנת תוצאות טובות יותר; PDF סרוק או OCR חלש עלול לייצר חילוץ חלקי.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-f">
+      <h2 id="sec-f">פרטיות ואחריות מקצועית</h2>
+
+      <article class="faq-item">
+        <h3>האם החוזים שמועלים נשמרים בפרטיות?</h3>
+        <p>כן. חוזים מטופלים כחסויים. LexAudit לא מוכר או משתף מסמכים עם צדדים שלישיים לצרכיהם. <strong>חוזי לקוחות אינם משמשים לאימון מודלים ציבוריים.</strong></p>
+        <p>שיפור המוצר מתבסס על נכסי ידע משפטיים מובנים (טקסונומיות, כללי חילוץ, אונטולוגיה, מדריך סגנון) — לא על ספיגת מסמכי לקוח. פירוט ב<a href="/privacy/">מדיניות הפרטיות</a>.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>מה האחריות המקצועית שלי?</h3>
+        <p>LexAudit הוא עזר לסקירה. האחריות לייצוג, חסיון, ניגוד עניינים, סודיות מול הלקוח וכל החלטה מקצועית נשארת אצלכם. אמתו עובדות, הפעילו שיקול דעת על ההמלצות, והתייחסו לדוח כקלט מובנה — לא תחליף לניתוח שלכם.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-g">
+      <h2 id="sec-g">גישה</h2>
+
+      <article class="faq-item">
+        <h3>איך מקבלים גישה היום?</h3>
+        <p>LexAudit ב<strong>בטא פרטית</strong>.</p>
+        <ul>
+          <li><strong>בקשת הדגמה:</strong> <a href="mailto:hello@lexaudit.ai">hello@lexaudit.ai</a></li>
+          <li><strong>משתמשים מאושרים:</strong> כניסה ב<a href="/beta/">/beta/</a> עם מספר טלפון ברשימת ההיתר</li>
+        </ul>
+        <p>הגישה מוגבלת בזמן שאנחנו מחזקים איכות הסקירה עם עורכי דין וצוותים משפטיים בפיילוט.</p>
+      </article>
+    </section>
+
+    <div class="closing-cta">
+      <p>LexAudit מסייע לעורכי דין בישראל להבין את ההסכם לפני שמדרגים סיכון — עם עובדות נפרדות מניתוח, בחינת מערכת היחסים תחילה, ודוח מקצועי כתוצר.</p>
+      <div class="links">
+        <a href="mailto:hello@lexaudit.ai" class="text-link">בקשת הדגמה</a>
+        <a href="/reports/lexaudit-report-v3.html" class="text-link">דוח לדוגמה</a>
+        <a href="/comparison/" class="text-link">השוואה</a>
+        <a href="/privacy/" class="text-link">פרטיות</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="/he/" aria-label="LexAudit" dir="ltr">
+        <img src="/logo.svg" alt="LexAudit" class="footer-logo" width="165" height="80">
+      </a>
+      <nav class="footer-links" aria-label="קישורי תחתית">
+        <a href="/he/">דף הבית</a>
+        <a href="/comparison/" lang="en">Comparison</a>
+        <a href="/he/faq/" aria-current="page">שאלות נפוצות</a>
+        <a href="/faq/" lang="en">English</a>
+        <a href="/privacy/" lang="en">Privacy</a>
+        <a href="/accessibility/">הצהרת נגישות</a>
+        <a href="mailto:hello@lexaudit.ai">צור קשר</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LexAudit. כל הזכויות שמורות.</span>
+      <span>חסוי — לשימוש מקצועי</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

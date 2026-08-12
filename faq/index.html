@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — LexAudit Contract Review for Lawyers</title>
+<meta name="description" content="Answers for Israeli lawyers and in-house legal teams about LexAudit: how structured contract review works, what reports include, supported agreement types, privacy, and how to request access.">
+<link rel="canonical" href="https://lexaudit.ai/faq/">
+<link rel="alternate" hreflang="en" href="https://lexaudit.ai/faq/">
+<link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/faq/">
+<link rel="alternate" hreflang="x-default" href="https://lexaudit.ai/faq/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@200;300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is LexAudit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit is contract review software built for legal professionals. You upload an agreement; LexAudit extracts verifiable contract facts, reconstructs how the agreement works as a legal relationship, prioritizes issues according to materiality, and delivers a structured Hebrew review report formatted as attorney work product."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does LexAudit replace a lawyer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. LexAudit organizes first-pass understanding of an agreement: facts, relationship structure, category-appropriate clause review, and issues ranked by consequence. Professional judgment, client strategy, negotiation, and final advice remain with counsel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is LexAudit legal advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. LexAudit reports are preliminary review work product. Every report includes a disclaimer that the output is for initial review purposes only and does not constitute legal advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is LexAudit for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit is for Israeli lawyers, law firms, and in-house legal teams who review agreements as part of regular practice — especially when a structured first pass is needed before deeper review, internal briefing, or client discussion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is LexAudit useful in a typical review workflow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit is useful when a new agreement arrives and counsel needs to understand how the deal works before prioritizing issues: who the parties are, what each side contributes, which legal mechanisms hold the relationship together, and which provisions materially affect the client."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does LexAudit review a contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit follows a fixed analytical sequence: deterministic extraction, contract-type classification with a review framework tailored to agreement type, relationship modeling (ARL), materiality ranking that prioritizes issues according to materiality, and a structured Hebrew report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"facts before reasoning\" mean in practice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Extracted facts appear as deterministic outputs in the report, separate from interpretive sections such as client exposures, clause assessment, and recommendations. A lawyer can verify factual extraction before relying on the analysis built on top of it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ARL (Asset · Relationship · Lifecycle)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ARL is LexAudit's framework for understanding what an agreement governs and how it evolves over time — asset, relationship, lifecycle stages, and future scenarios. Clause review is informed by this structure before risk assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is LexAudit different from reviewing a contract with a general-purpose AI assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A general-purpose AI assistant is built for conversation. LexAudit is a fixed multi-stage review process with relationship structure examined first, issues ranked according to materiality, and a professional Hebrew memorandum as the deliverable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I receive after an analysis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A structured Hebrew review report including executive summary, key points for professional review, client exposures, extracted contract facts, ARL relationship analysis, clause review, and recommended items for lawyer follow-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which agreement types does LexAudit support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During the private beta, LexAudit supports commercial agreements, NDAs, employment, residential and commercial lease, sale and purchase, co-ownership, financing including SAFE-style agreements, franchise, and distribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can LexAudit analyze PDF and Word contracts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. LexAudit accepts TXT, DOCX, and PDF uploads. Searchable text and clean PDF text layers produce the best results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are uploaded contracts kept confidential?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Uploaded contracts are treated as confidential. Customer contracts are not used to train public AI models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are my professional responsibilities when using LexAudit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit is a review aid. You remain responsible for client representation, privilege, conflicts, confidentiality obligations, and all professional decisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I access LexAudit today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LexAudit is in private beta. Request a demo at hello@lexaudit.ai. Approved beta users sign in at /beta/ with an allowlisted phone number."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --surface: #ffffff;
+    --surface-alt: #f9f9f9;
+    --surface-warm: #f7f5f0;
+    --on-surface: #1a1c1c;
+    --on-surface-variant: #5e5e5e;
+    --outline: #6a6d6d;
+    --border-subtle: #e5e5e5;
+    --primary: #000000;
+    --on-primary: #ffffff;
+    --accent-gold: #8f7850;
+    --page-margin: 64px;
+    --container-max: 820px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg{ display:block; max-width:100%; }
+  a{ color: inherit; text-decoration: none; }
+  a.text-link{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--on-surface);
+    padding-bottom: 2px;
+  }
+  a.text-link:hover{ color: var(--on-surface-variant); border-color: var(--on-surface-variant); }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 var(--page-margin); }
+  .doc-wrap{ max-width: var(--container-max); }
+  h1, h2, h3{
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    color: var(--on-surface);
+  }
+  .skip-link{
+    position: absolute; left: 16px; top: -80px; z-index: 100;
+    background: var(--primary); color: var(--on-primary);
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 0.06em; padding: 12px 20px; transition: top 160ms ease;
+  }
+  .skip-link:focus{ top: 12px; }
+  header{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(6px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  nav{ display:flex; align-items:center; justify-content: space-between; height: 84px; }
+  .logo-mark{ width: 168px; height: auto; }
+  .nav-links{ display:flex; align-items:center; gap: 36px; }
+  .nav-links a{
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--on-surface-variant);
+    border-bottom: 1px solid transparent;
+    transition: color 160ms ease, border-color 160ms ease;
+  }
+  .nav-links a:hover, .nav-links a[aria-current="page"]{
+    color: var(--on-surface); border-color: var(--on-surface);
+  }
+  .nav-cta{ display:flex; align-items:center; gap: 12px; }
+  .nav-links-desktop{ display:flex; }
+  .btn{
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 46px; padding: 0 26px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    border-radius: 0; cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease;
+    white-space: nowrap;
+    background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary);
+  }
+  .btn:hover{ background: #2a2a2a; }
+  .doc{ padding: 88px 0 72px; }
+  .doc .eyebrow{
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent-gold); margin-bottom: 24px;
+  }
+  .doc h1{ font-size: 42px; line-height: 1.22; margin-bottom: 20px; }
+  .doc .lead{
+    font-family: 'IBM Plex Serif', serif; font-weight: 300;
+    font-size: 20px; line-height: 1.55; color: var(--on-surface-variant);
+    margin-bottom: 28px;
+  }
+  .doc .hero-links{
+    display:flex; flex-wrap: wrap; gap: 20px; align-items: center;
+    margin-bottom: 56px; padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .faq-section{ margin-bottom: 56px; }
+  .faq-section > h2{
+    font-size: 13px; font-family: 'JetBrains Mono', monospace;
+    font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--on-surface-variant); margin-bottom: 28px;
+  }
+  .faq-item{
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .faq-item:first-of-type{ border-top: 1px solid var(--border-subtle); }
+  .faq-item h3{
+    font-size: 22px; line-height: 1.35; margin-bottom: 14px;
+  }
+  .faq-item p, .faq-item li{
+    color: var(--on-surface-variant); font-weight: 300;
+    margin-bottom: 12px;
+  }
+  .faq-item p:last-child, .faq-item ul:last-child{ margin-bottom: 0; }
+  .faq-item ul{ padding-left: 20px; }
+  .faq-item strong{ color: var(--on-surface); font-weight: 500; }
+  .compare-table{
+    width: 100%; border-collapse: collapse; margin: 20px 0;
+    font-size: 14px;
+  }
+  .compare-table th, .compare-table td{
+    border: 1px solid var(--border-subtle);
+    padding: 12px 14px; vertical-align: top; text-align: left;
+  }
+  .compare-table thead th{
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--surface-alt);
+  }
+  .compare-table tbody th{ font-weight: 500; color: var(--on-surface); width: 22%; }
+  .closing-cta{
+    padding: 48px 0 72px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .closing-cta p{
+    font-family: 'IBM Plex Serif', serif; font-weight: 300;
+    font-size: 20px; line-height: 1.55; margin-bottom: 24px;
+  }
+  .closing-cta .links{ display:flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+  footer{ padding: 56px 0 48px; border-top: 1px solid var(--border-subtle); }
+  .footer-top{ display:flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; }
+  .footer-logo{ width: 148px; height: auto; }
+  .footer-links{ display:flex; gap: 36px; flex-wrap: wrap; }
+  .footer-links a{
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-surface-variant);
+  }
+  .footer-links a:hover{ color: var(--on-surface); }
+  .footer-bottom{ display:flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 12px; }
+  .footer-bottom span{ font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--outline); }
+  @media (max-width: 860px){
+    :root{ --page-margin: 24px; }
+    .nav-links-desktop{ display:none; }
+    .doc{ padding: 56px 0 48px; }
+    .doc h1{ font-size: 30px; }
+    .doc .lead{ font-size: 18px; }
+    .compare-table{ font-size: 13px; display: block; overflow-x: auto; }
+    .footer-top{ flex-direction: column; }
+  }
+</style>
+</head>
+<script type="module" src="/src/analytics-entry.ts"></script>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Primary">
+      <a href="/" aria-label="LexAudit homepage">
+        <img src="/logo.svg" alt="LexAudit" class="logo-mark" width="165" height="80">
+      </a>
+      <div class="nav-links nav-links-desktop">
+        <a href="/#methodology">Methodology</a>
+        <a href="/#sample">Sample Report</a>
+        <a href="/comparison/">Comparison</a>
+        <a href="/faq/" aria-current="page">FAQ</a>
+        <a href="/he/faq/" lang="he">עברית</a>
+      </div>
+      <div class="nav-cta">
+        <a href="/#demo" class="btn" data-analytics-event="request_demo" data-analytics-location="nav">Request a Demo</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc" tabindex="-1">
+  <div class="wrap doc-wrap">
+    <p class="eyebrow">Product knowledge</p>
+    <h1>Frequently asked questions</h1>
+    <p class="lead">LexAudit is structured contract review software for Israeli lawyers, law firms, and in-house legal teams. It produces professional Hebrew review reports — not chat transcripts.</p>
+    <div class="hero-links">
+      <a href="/reports/lexaudit-report-v3.html" class="text-link">View sample report</a>
+      <a href="mailto:hello@lexaudit.ai" class="text-link">Request a demo</a>
+    </div>
+
+    <section class="faq-section" aria-labelledby="sec-a">
+      <h2 id="sec-a">What LexAudit is</h2>
+
+      <article class="faq-item">
+        <h3>What is LexAudit?</h3>
+        <p>LexAudit is contract review software built for legal professionals. You upload an agreement; LexAudit extracts verifiable contract facts, reconstructs how the agreement works as a legal relationship, prioritizes issues according to materiality, and delivers a structured Hebrew review report formatted as attorney work product.</p>
+        <p>LexAudit is designed to <strong>augment legal judgment — not replace it</strong>.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>Does LexAudit replace a lawyer?</h3>
+        <p>No. LexAudit organizes first-pass understanding of an agreement: facts, relationship structure, category-appropriate clause review, and issues ranked by consequence. Professional judgment, client strategy, negotiation, and final advice remain with counsel.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>Is LexAudit legal advice?</h3>
+        <p>No. LexAudit reports are preliminary review work product. Every report includes a disclaimer that the output is for initial review purposes only and does not constitute legal advice.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-b">
+      <h2 id="sec-b">Who it is for</h2>
+
+      <article class="faq-item">
+        <h3>Who is LexAudit for?</h3>
+        <p>LexAudit is for <strong>Israeli lawyers, law firms, and in-house legal teams</strong> who review agreements as part of regular practice — especially when a structured first pass is needed before deeper review, internal briefing, or client discussion.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>When is LexAudit useful in a typical review workflow?</h3>
+        <p>LexAudit is useful when a new agreement arrives and counsel needs to understand <strong>how the deal works</strong> before prioritizing issues: who the parties are, what each side contributes, which legal mechanisms hold the relationship together, and which provisions materially affect the client. It is designed for repeatable first-pass review, not for final sign-off.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-c">
+      <h2 id="sec-c">How LexAudit works</h2>
+
+      <article class="faq-item">
+        <h3>How does LexAudit review a contract?</h3>
+        <p>LexAudit follows a fixed analytical sequence:</p>
+        <ul>
+          <li><strong>Deterministic extraction</strong> — verifiable facts are extracted by rule-based logic before interpretive analysis begins.</li>
+          <li><strong>Contract-type classification</strong> — the system identifies the agreement category and applies a <strong>review framework tailored to agreement type</strong> (for example, employment vs. NDA vs. co-ownership).</li>
+          <li><strong>Relationship modeling (ARL)</strong> — the agreement is modeled as Asset · Relationship · Lifecycle · Future Scenarios — not only as a flat clause list.</li>
+          <li><strong>Materiality ranking</strong> — prioritizes issues according to materiality before they are written up.</li>
+          <li><strong>Structured report</strong> — findings are rendered as a professional Hebrew memorandum (HTML and PDF).</li>
+        </ul>
+        <p>Interpretation does not precede verified facts. The report communicates an analysis that has already been structured.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What does “facts before reasoning” mean in practice?</h3>
+        <p>It means extracted facts — parties, term, payment, termination, jurisdiction, and category-specific groupings where available — appear as <strong>deterministic outputs</strong> in the report, separate from interpretive sections such as client exposures, clause assessment, and recommendations. A lawyer can verify factual extraction before relying on the analysis built on top of it.</p>
+        <p>LexAudit does not ask the model to invent or restate basic contract facts from memory.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What is ARL (Asset · Relationship · Lifecycle)?</h3>
+        <p>ARL is LexAudit’s framework for understanding what an agreement <strong>governs</strong> and <strong>how it evolves over time</strong>:</p>
+        <ul>
+          <li><strong>Asset</strong> — the economic or legal object at the center of the deal</li>
+          <li><strong>Relationship</strong> — the enduring legal and commercial relationship between the parties</li>
+          <li><strong>Lifecycle</strong> — how that relationship changes through stages (entry, operation, breach, exit)</li>
+          <li><strong>Future scenarios</strong> — the events the contract anticipates and allocates risk for</li>
+        </ul>
+        <p>Clause review is informed by this structure. The goal is to understand the relationship structure before assessing risk — not a generic clause list applied to every agreement type.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>How is LexAudit different from reviewing a contract with a general-purpose AI assistant?</h3>
+        <p>A general-purpose AI assistant is built for conversation: you paste text, write instructions, and receive a single narrative answer in a chat window. LexAudit is built as a <strong>fixed review process</strong> with a defined deliverable:</p>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">General-purpose AI assistant</th>
+              <th scope="col">LexAudit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Workflow</th>
+              <td>Ad-hoc question and answer</td>
+              <td>Fixed multi-stage review sequence</td>
+            </tr>
+            <tr>
+              <th scope="row">Input</th>
+              <td>Enter text and provide instructions</td>
+              <td>Upload TXT, DOCX, or PDF</td>
+            </tr>
+            <tr>
+              <th scope="row">Facts vs. analysis</th>
+              <td>Typically combined in one response</td>
+              <td>Facts extracted first, shown in separate report sections</td>
+            </tr>
+            <tr>
+              <th scope="row">Review frame</th>
+              <td>Depends on how you instruct the model</td>
+              <td>Review framework tailored to agreement type</td>
+            </tr>
+            <tr>
+              <th scope="row">Analysis model</th>
+              <td>Often clause-by-clause summary</td>
+              <td>Relationship structure examined first (ARL) before risk write-up</td>
+            </tr>
+            <tr>
+              <th scope="row">Prioritization</th>
+              <td>Often a flat list of points</td>
+              <td>Issues ranked according to materiality</td>
+            </tr>
+            <tr>
+              <th scope="row">Output format</th>
+              <td>Chat message</td>
+              <td>Professional Hebrew review memorandum</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>LexAudit is not a better instruction set for a chat tool. It is a structured review process whose deliverable is a professional report.</p>
+        <p>For a fuller comparison against traditional review and generic AI, see the <a href="/comparison/">comparison framework</a>.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-d">
+      <h2 id="sec-d">What you receive</h2>
+
+      <article class="faq-item">
+        <h3>What do I receive after an analysis?</h3>
+        <p>A structured <strong>Hebrew review report</strong>, typically including:</p>
+        <ul>
+          <li>Executive summary</li>
+          <li>Key points for professional review</li>
+          <li>Client exposures (where applicable)</li>
+          <li>Extracted contract facts</li>
+          <li>ARL relationship analysis</li>
+          <li>Clause review against the category taxonomy (with attention to missing or unclear provisions)</li>
+          <li>Recommended items for lawyer follow-up</li>
+          <li>Space for counsel notes</li>
+        </ul>
+        <p>See the public <a href="/reports/lexaudit-report-v3.html">sample report</a> for the full structure and presentation standard.</p>
+        <p>Reports are designed for internal review, matter files, and client briefing — not as a chat log.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-e">
+      <h2 id="sec-e">Supported agreements (beta coverage)</h2>
+
+      <article class="faq-item">
+        <h3>Which agreement types does LexAudit support?</h3>
+        <p>LexAudit classifies agreements automatically and applies a <strong>category-specific review taxonomy</strong>. During the private beta, the platform supports review across a broad set of agreement families, including:</p>
+        <ul>
+          <li><strong>Commercial agreements and services</strong> — including software development, marketing services, procurement/vendor, and event production subtypes where detected</li>
+          <li><strong>NDAs</strong></li>
+          <li><strong>Employment agreements</strong></li>
+          <li><strong>Residential lease</strong> and <strong>commercial lease</strong></li>
+          <li><strong>Sale and purchase</strong> (real estate)</li>
+          <li><strong>Co-ownership</strong> — shareholders, founders, joint venture, and family business agreements</li>
+          <li><strong>Financing</strong> — including SAFE-style investment agreements</li>
+          <li><strong>Franchise</strong></li>
+          <li><strong>Distribution</strong></li>
+        </ul>
+        <p>Coverage continues to expand as the beta hardens extraction and review against real specimens from practicing lawyers. If you work primarily with one agreement type, mention it when requesting access so we can prioritize your workflow.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>Can LexAudit analyze PDF and Word contracts?</h3>
+        <p>Yes. LexAudit accepts <strong>TXT, DOCX, and PDF</strong> uploads. Extraction quality depends on the document: searchable text and clean PDF text layers produce the best results; scanned or OCR-heavy PDFs may yield incomplete fact extraction.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-f">
+      <h2 id="sec-f">Privacy and professional responsibility</h2>
+
+      <article class="faq-item">
+        <h3>Are uploaded contracts kept confidential?</h3>
+        <p>Yes. Uploaded contracts are treated as confidential. LexAudit does not sell or share your documents with third parties for their own purposes. <strong>Customer contracts are not used to train public AI models.</strong></p>
+        <p>Product improvement relies on curated legal knowledge assets (taxonomies, extraction rules, ontologies, style guides) — not on absorbing client documents. Full details are in the <a href="/privacy/">Privacy policy</a>.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What are my professional responsibilities when using LexAudit?</h3>
+        <p>LexAudit is a review aid. You remain responsible for client representation, privilege, conflicts, confidentiality obligations, and all professional decisions. Verify extracted facts, apply judgment to recommendations, and treat the report as structured input to your review — not as a substitute for your own analysis.</p>
+      </article>
+    </section>
+
+    <section class="faq-section" aria-labelledby="sec-g">
+      <h2 id="sec-g">Access</h2>
+
+      <article class="faq-item">
+        <h3>How do I access LexAudit today?</h3>
+        <p>LexAudit is in <strong>private beta</strong>.</p>
+        <ul>
+          <li><strong>Request a demo:</strong> <a href="mailto:hello@lexaudit.ai">hello@lexaudit.ai</a></li>
+          <li><strong>Approved beta users:</strong> sign in at <a href="/beta/">/beta/</a> with an allowlisted phone number</li>
+        </ul>
+        <p>Access is limited while we work with pilot lawyers and in-house teams to harden review quality across agreement types.</p>
+      </article>
+    </section>
+
+    <div class="closing-cta">
+      <p>LexAudit helps Israeli lawyers understand the agreement before prioritizing risk — with facts separated from analysis, relationship structure examined first, and a professional report as the deliverable.</p>
+      <div class="links">
+        <a href="mailto:hello@lexaudit.ai" class="text-link">Request a demo</a>
+        <a href="/reports/lexaudit-report-v3.html" class="text-link">View sample report</a>
+        <a href="/comparison/" class="text-link">Comparison framework</a>
+        <a href="/privacy/" class="text-link">Privacy</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="/" aria-label="LexAudit homepage">
+        <img src="/logo.svg" alt="LexAudit" class="footer-logo" width="165" height="80">
+      </a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/comparison/">Comparison</a>
+        <a href="/faq/" aria-current="page">FAQ</a>
+        <a href="/he/faq/" lang="he">עברית</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/accessibility/" lang="he">הצהרת נגישות</a>
+        <a href="mailto:hello@lexaudit.ai">Contact</a>
+        <a href="https://www.linkedin.com/in/michal-ehrman-669687418/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LexAudit. All rights reserved.</span>
+      <span>Confidential — Prepared for Professional Use</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

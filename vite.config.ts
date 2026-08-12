@@ -16,7 +16,9 @@ export default defineConfig({
         comparison: fileURLToPath(
           new URL('./comparison/index.html', import.meta.url),
         ),
+        faq: fileURLToPath(new URL('./faq/index.html', import.meta.url)),
         he: fileURLToPath(new URL('./he/index.html', import.meta.url)),
+        heFaq: fileURLToPath(new URL('./he/faq/index.html', import.meta.url)),
         beta: fileURLToPath(new URL('./beta/index.html', import.meta.url)),
       },
     },
