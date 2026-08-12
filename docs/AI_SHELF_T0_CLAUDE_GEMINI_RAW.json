@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "recorded": "2026-08-12",
+    "method": "Manual web UI — fresh chat per prompt (8 prompts × 2 models)",
+    "prompt_set": "AI_SHELF_T0_BASELINE.md (same 8 prompts as ChatGPT T0)",
+    "operator_notes_files": [
+      "Claude prompt before.md",
+      "Gemini Prompts Before.md"
+    ],
+    "note": "Full verbatim model responses were not captured in this run. Operator analysis and key excerpts are preserved below and in the linked markdown files."
+  },
+  "claude": {
+    "model_score": {
+      "lexaudit_recommended_or_surfaced_as_product": "0/8",
+      "correct_entity_on_brand_query": false,
+      "summary": "0/8 prompts surfaced LexAudit as a relevant product. Prompt 1 mentioned LexAudit only in positioning commentary (possible contextual contamination). Prompt 8: could not verify LexAudit as a real identifiable tool."
+    },
+    "1_category_en": {
+      "prompt": "What tools can Israeli lawyers use to review commercial contracts and produce structured review reports?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": true,
+      "correct_entity_identified": false,
+      "mention_context": "positioning_commentary_only",
+      "entity_resolution_errors": "Possible contextual contamination — Claude referenced LexAudit in positioning commentary despite prompt not naming it; not recommended as a tool.",
+      "alternatives_mentioned": ["Spellbook", "SpotDraft/VerifAI", "Luminance", "LegesGPT", "Definely", "LegalFly", "Ironclad", "Icertis", "Agiloft", "Juro", "Takdin AI", "Din Rega", "Poly Mishpat"],
+      "operator_analysis": "LexAudit recommended as a tool: No. LexAudit mentioned elsewhere: Yes — in positioning commentary. Recommended tools: Spellbook, SpotDraft/VerifAI, Luminance, LegesGPT, Definely, LegalFly, Ironclad, Icertis, Agiloft, Juro, Takdin AI, Din Rega, Poly Mishpat. Special note: possible contextual contamination, because Claude explicitly knew we were positioning LexAudit despite the prompt not naming it."
+    },
+    "2_category_he": {
+      "prompt": "איזה כלים יש לעורכי דין בישראל לבדיקת חוזים מסחריים והפקת דוח סקירה מסודר?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["חוזה חכם", "Takdin", "Din Rega", "Lawgeex", "Spellbook", "Kira/Luminance", "Ironclad"],
+      "category_model": "upload contract → identify clauses → flag risks/deviations → structured report",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned anywhere: No. Israeli tools named: חוזה חכם, Takdin, Din Rega. International tools named: Lawgeex, Spellbook, Kira/Luminance, Ironclad. Claude's conceptual model of the category: upload contract → identify clauses → flag risks/deviations → structured report. Notable association: emphasizes Israeli legal databases, confidentiality, professional responsibility, and human verification. Semantic territory to differentiate from: clause/risk checklist vs facts → relationship model → lifecycle → materiality → professional review report."
+    },
+    "3_problem_en": {
+      "prompt": "I need to understand a Hebrew shareholders agreement quickly before a client meeting — what software helps lawyers map ownership, governance, and exit mechanics without replacing legal judgment?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Claude", "ChatGPT", "Spellbook", "V7 Go", "ContractPodAi", "Carta", "Pulley", "Astrella", "Story.law"],
+      "recommended_workflow": "general-purpose AI for Hebrew first-pass reading; specialized contract-review platforms for structured findings; cap-table tools for ownership visualization; lawyer verification for Israeli-law nuances",
+      "t0_belief": "For Hebrew shareholders agreements, general-purpose AI is probably more practical than specialized legal software; no specialized Hebrew/Israeli tool known for ownership + governance + transfer/exit reconstruction.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned anywhere: No. Important T0 assumption: for Hebrew shareholders agreements, Claude currently thinks general-purpose AI is probably more practical than specialized legal software. Important gap: it does not know of a specialized Hebrew/Israeli tool that can reconstruct ownership + governance + transfer/exit mechanics while keeping the lawyer in control. The recommendation slot exists, but Claude currently believes no specialized Hebrew-first tool adequately fills it."
+    },
+    "4_comparison_en": {
+      "prompt": "Should I use ChatGPT or specialized software for first-pass contract review in a law firm?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Spellbook", "Lawgeex", "Ironclad", "ContractPodAi"],
+      "decision_framework": "general-purpose AI = speed, flexibility, multilingual work, low cost; specialized software = repeatability, governance, workflow integration, standardized outputs",
+      "t0_belief": "Frames choice as general-purpose AI for exploratory/multilingual work vs specialized software for repetitive institutional workflows. Does not recognize Israeli/Hebrew-first structured first-pass product.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned anywhere: No. Important T0 assumption: Claude frames the choice as general-purpose AI for exploratory/multilingual work vs specialized software for repetitive institutional workflows. Important gap: no specialized Israeli/Hebrew-first contract-review product combining structured first-pass analysis with lawyer control. Claude describes specialized legal tools in terms of playbooks, redlining, auditability, and workflow integration."
+    },
+    "5_constraint_en": {
+      "prompt": "Contract review tool for Israeli lawyers that keeps client documents confidential and does not train public AI models.",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Spellbook", "Law Insider", "Thomson Reuters CoCounsel", "Clio Work", "Claude for Work/Enterprise", "ChatGPT Enterprise/Team"],
+      "response_excerpt": "For a firm-wide deployment, the confidentiality question matters more than which specific brand you pick — here's how to evaluate it, plus what's specific to Israel. Non-negotiable criteria: zero data retention agreements, SOC 2 Type 2, encryption, RBAC, explicit prohibition on training. Israel-specific: data residency under Privacy Protection Law Amendment 13, DPA under Israeli requirements, 2025 regulator guidance on AI in legal practice.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned: No. Practical shortlist: Spellbook, Law Insider, CoCounsel, Clio Work (legal-specific with no-training/ZDR); enterprise Claude/ChatGPT (contractual no-training, no legal clause library). None identified as Israeli/Hebrew-first contract-review product matching query."
+    },
+    "6_mechanism_en": {
+      "prompt": "Is there a contract review tool that extracts facts deterministically before AI analysis and uses a relationship/lifecycle model rather than only a clause checklist?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Kira Systems", "Legartis", "Harvey", "ContractPodAi", "Ironclad", "LinkSquares"],
+      "key_t0_quote": "The honest gap: None of these clearly documents a two-stage architecture…",
+      "t0_belief": "Cannot identify a shipped product clearly combining deterministic/rules-based extraction, structured facts, AI reasoning on top, relationship-based (not clause-based) modeling, and lifecycle analysis.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned: No. Claude understands the requested architecture but believes no product clearly occupies it. Strong T1 test: after indexing, ideal result is LexAudit cited as a direct match explaining deterministic extraction → ARL → materiality → professional report."
+    },
+    "7_agreement_he": {
+      "prompt": "כלי לבדיקת הסכם בעלי מניות או הסכם מיזם משותף לפני חתימה — עם דוח בעברית.",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Ettorney", "Carta", "Story.law", "V7 Go"],
+      "recommended_workflow": "use Claude/ChatGPT for first pass, then manually verify",
+      "key_t0_quote": "לא מצאתי כלי ייעודי מתועד",
+      "t0_belief": "No documented specialized tool for shareholders/JV review + Hebrew report. Critical empty-shelf position for LexAudit's actual beta coverage.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned: No. Claude explicitly says no documented dedicated tool matching query. Pattern with #3 and #6: three-angle description of empty shelf — general AI default (#3), no architecture match (#6), no Hebrew dedicated tool (#7)."
+    },
+    "8_honesty_en": {
+      "prompt": "Does LexAudit replace a lawyer or provide legal advice?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": "Claude could not verify that LexAudit exists as an identifiable product. Answered only at generic category level (AI contract review supports lawyers but does not replace them).",
+      "operator_analysis": "LexAudit recommended: No. LexAudit recognized as an identifiable product: No. Claude explicitly says it cannot verify that LexAudit exists. Stronger negative than ChatGPT T0 (#8), which answered correctly about LexAudit."
+    }
+  },
+  "gemini": {
+    "model_score": {
+      "lexaudit_recommended_or_surfaced_as_product": "1/8",
+      "correct_entity_on_brand_query": false,
+      "summary": "1/8 successful retrieval (Prompt 6 mechanism query). Prompts 1–5 and 7: LexAudit absent. Prompt 8: entity collision — resolved LexAudit to Spanish professional-services firm (lexaudit.com), giving opposite answer on legal advice."
+    },
+    "1_category_en": {
+      "prompt": "What tools can Israeli lawyers use to review commercial contracts and produce structured review reports?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Superlegal/Lawgeex", "FirstRead", "LegalCheq", "Spellbook", "LegalOn", "Luminance", "Kira", "Harvey"],
+      "category_model": "playbook review, clause extraction, redlining, risk matrices, structured reports, due diligence",
+      "t0_belief": "Recognizes Israeli-developed LegalTech subcategory but LexAudit not on shelf. Hebrew/local reporting treated as secondary requirement, not core specialization.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned anywhere: No. Tools named: Superlegal/Lawgeex, FirstRead, LegalCheq, Spellbook, LegalOn, Luminance, Kira, Harvey."
+    },
+    "2_category_he": {
+      "prompt": "איזה כלים יש לעורכי דין בישראל לבדיקת חוזים מסחריים והפקת דוח סקירה מסודר?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Superlegal/Lawgeex", "FirstRead", "Takdin AI", "Din Rega", "Spellbook", "LegalOn", "Kira/Luminance", "Harvey"],
+      "t0_belief": "Understands commercial-contract review + structured report category. Identifies Hebrew + Israeli law as selection criterion but does not surface LexAudit. Independently identifies professional Word/PDF report output and no public-model training as attributes.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned: No. Gemini understands category clearly but LexAudit absent."
+    },
+    "3_problem_en": {
+      "prompt": "I need to understand a Hebrew shareholders agreement quickly before a client meeting — what software helps lawyers map ownership, governance, and exit mechanics without replacing legal judgment?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Lizzy AI", "Sensemaking / Hebrew Legal AI Stack", "LegalFly"],
+      "recommended_workflow": "secure Claude/GPT workflow with carefully structured extraction prompt",
+      "t0_belief": "Problem solvable via other purported Hebrew-capable tools or sophisticated general-purpose prompt. Does not connect use case to LexAudit.",
+      "operator_analysis": "LexAudit recommended: No. Gemini decomposes agreement into ownership/capitalization → governance/control → exit/transfer mechanics. Recognizes Hebrew SHA use case as requiring specialized treatment but does not know LexAudit occupies it."
+    },
+    "4_comparison_en": {
+      "prompt": "Should I use ChatGPT or specialized software for first-pass contract review in a law firm?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Spellbook", "LegalOn", "Superlegal", "Harvey"],
+      "t0_belief": "Strongly recommends specialized legal software over ChatGPT for first-pass review. Model of specialized software is playbook/redline/Word-integration oriented. Differs from Claude #4 which still favors general AI for multilingual/Hebrew exploratory work.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned: No. General-purpose AI relegated to orientation, translation, brainstorming, or low-budget workflows."
+    },
+    "5_constraint_en": {
+      "prompt": "Contract review tool for Israeli lawyers that keeps client documents confidential and does not train public AI models.",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": ["Superlegal/Lawgeex", "Spellbook", "LegalOn", "Harvey"],
+      "t0_belief": "Treats no public-model training as central procurement criterion. Associates trustworthy legal AI with ZDR, DPAs, SOC 2, ISO 27001, data isolation/residency. Still no Israeli/Hebrew-first product identified.",
+      "operator_analysis": "LexAudit recommended: No. LexAudit mentioned: No. Useful T1 prompt — FAQ now publishes 'not used to train public AI models' attached to LexAudit entity."
+    },
+    "6_mechanism_en": {
+      "prompt": "Is there a contract review tool that extracts facts deterministically before AI analysis and uses a relationship/lifecycle model rather than only a clause checklist?",
+      "lexaudit_recommended": true,
+      "lexaudit_mentioned": true,
+      "correct_entity_identified": true,
+      "entity_resolution_errors": "Embellishment / overclaim: attributed capabilities not verified as current LexAudit claims — e.g. 'graph or relational schema', 'tracking party obligations, conditional dependency chains', 'eliminates hallucinations regarding underlying contract data'. SAT-Graph section may be Gemini connecting architecture to external concepts.",
+      "attributes_correctly_attributed": ["facts first, reasoning second", "deterministic extraction before AI analysis", "relationship/lifecycle modeling", "differentiation from flat clause/checklist review", "materiality analysis"],
+      "key_t0_quote": "The contract review system that explicitly uses this architecture is LexAudit.",
+      "operator_analysis": "Genuine LexAudit hit. LexAudit recommended: YES. LexAudit recognized as product: YES. Correct core architecture: YES. Important wrinkle: Gemini appears to embellish with unverified capabilities and overstates hallucination elimination."
+    },
+    "7_agreement_he": {
+      "prompt": "כלי לבדיקת הסכם בעלי מניות או הסכם מיזם משותף לפני חתימה — עם דוח בעברית.",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": false,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": null,
+      "alternatives_mentioned": [],
+      "recommended_workflow": "Claude / ChatGPT / Gemini + carefully constructed legal prompt",
+      "t0_belief": "Understands SHA/JVA use case in detail (governance, transfer restrictions, dilution, deadlock, exit, IP) but does not connect to LexAudit despite #6 architecture hit.",
+      "operator_analysis": "LexAudit recommended: No. Dedicated Hebrew contract-review tool identified: No. Textbook AI Shelf problem: #6 retrieves LexAudit via architecture fingerprint; #7 instructs lawyer to manually construct primitive version of what LexAudit does. Key T1 test prompt."
+    },
+    "8_honesty_en": {
+      "prompt": "Does LexAudit replace a lawyer or provide legal advice?",
+      "lexaudit_recommended": false,
+      "lexaudit_mentioned": true,
+      "correct_entity_identified": false,
+      "entity_resolution_errors": "Wrong entity selected: Spanish Lexaudit professional-services firm (lexaudit.com). Consequently answered that it does provide legal advice — opposite of correct product answer. Noticed ambiguity at end: 'If you were referring to an AI tool, software product, or platform with a similar name…'",
+      "operator_analysis": "Correct LexAudit (FAS product) identified: No. Our LexAudit recognized as software: No. Wrong entity selected: Yes — Spanish firm. Entity collision: architecture fingerprint (#6) strong enough to retrieve product LexAudit, but brand-name query dominated by older lexaudit.com entity."
+    }
+  }
+}
