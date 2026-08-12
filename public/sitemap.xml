@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://lexaudit.ai/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/"/>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/he/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/"/>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/faq/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/faq/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/faq/"/>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/he/faq/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/faq/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/faq/"/>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/comparison/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/privacy/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/accessibility/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
+
   <url>
     <loc>https://lexaudit.ai/reports/lexaudit-report-v3.html</loc>
     <lastmod>2026-06-03</lastmod>
   </url>
+
 </urlset>
