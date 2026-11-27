@@ -65,6 +65,44 @@ img, svg { display: block; max-width: 100%; }
 }
 .skip-link:focus { top: 16px; }
 
+/* Screen-only back-navigation bar (hidden in print/PDF export) ------------- */
+.report-nav {
+  max-width: var(--page-w);
+  margin: 0 auto 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+.report-nav--footer {
+  margin: 18px auto 0;
+}
+.report-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 10px 4px;
+}
+.report-nav__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.report-nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+.report-nav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
 /* ==========================================================================
    Report shell & pages
    ========================================================================== */
@@ -744,7 +782,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--
 @media print {
   @page { size: A4; margin: 14mm; }
   body { background: #fff; padding: 0; }
-  .skip-link { display: none; }
+  .skip-link, .report-nav { display: none; }
   .report { max-width: none; }
   .page {
     border: none;
