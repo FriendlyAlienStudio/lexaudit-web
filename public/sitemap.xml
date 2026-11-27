@@ -4,50 +4,54 @@
 
   <url>
     <loc>https://lexaudit.ai/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lexaudit.ai/"/>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/he/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lexaudit.ai/"/>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/faq/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/faq/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lexaudit.ai/faq/"/>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/he/faq/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="he" href="https://lexaudit.ai/he/faq/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lexaudit.ai/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lexaudit.ai/faq/"/>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/comparison/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/privacy/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/accessibility/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://lexaudit.ai/reports/lexaudit-report-v3.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
 </urlset>
